@@ -1,0 +1,96 @@
+[
+  {
+    "mines": 10,
+    "wins": 91,
+    "episodes": 100,
+    "win_rate": 0.91,
+    "ci95": [
+      0.837737871472837,
+      0.9519274599974348
+    ],
+    "seconds": 1.5739843000001201,
+    "losses": 9,
+    "errors": 0,
+    "games_with_fallback": 0,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 1885,
+      "deduced_safe": 1658,
+      "enumerations": 227,
+      "enumeration_iterations": 12822
+    }
+  },
+  {
+    "mines": 14,
+    "wins": 74,
+    "episodes": 100,
+    "win_rate": 0.74,
+    "ci95": [
+      0.6462901055081282,
+      0.8159530153525186
+    ],
+    "seconds": 25.91045469999972,
+    "losses": 26,
+    "errors": 0,
+    "games_with_fallback": 1,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 2616,
+      "enumerations": 593,
+      "enumeration_iterations": 59334,
+      "deduced_safe": 2022,
+      "no_constraints": 1,
+      "fallbacks": 1
+    }
+  },
+  {
+    "mines": 18,
+    "wins": 39,
+    "episodes": 100,
+    "win_rate": 0.39,
+    "ci95": [
+      0.3001687400639441,
+      0.4879698295415926
+    ],
+    "seconds": 23.999491900000066,
+    "losses": 61,
+    "errors": 0,
+    "games_with_fallback": 2,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 2571,
+      "enumerations": 910,
+      "enumeration_iterations": 158791,
+      "deduced_safe": 1659,
+      "no_constraints": 2,
+      "fallbacks": 2
+    }
+  },
+  {
+    "mines": 22,
+    "wins": 16,
+    "episodes": 100,
+    "win_rate": 0.16,
+    "ci95": [
+      0.10095288488804782,
+      0.24420269389270244
+    ],
+    "seconds": 66.20072100000016,
+    "losses": 84,
+    "errors": 0,
+    "games_with_fallback": 3,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 1889,
+      "enumerations": 859,
+      "enumeration_iterations": 220260,
+      "deduced_safe": 1027,
+      "no_constraints": 3,
+      "fallbacks": 3
+    }
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "model": "final",
+  "model_path": "E:\\minesweeper_cnn\\output\\mixed1\\mixed_final.dat",
+  "mines": 18,
+  "seed": 20261013,
+  "episodes": 10000,
+  "wins": 193,
+  "group_wins": [
+    21,
+    26,
+    19,
+    23,
+    21,
+    14,
+    14,
+    16,
+    17,
+    22
+  ],
+  "group_win_rates": [
+    0.021,
+    0.026,
+    0.019,
+    0.023,
+    0.021,
+    0.014,
+    0.014,
+    0.016,
+    0.017,
+    0.022
+  ],
+  "win_rate": 0.0193,
+  "group_std_population": 0.0037960505792204607,
+  "wilson_ci95": [
+    0.01678232864046499,
+    0.022186847393103493
+  ],
+  "seconds": 133.22788469999796,
+  "script": "E:\\minesweeper_cnn\\minesweeper_test_cnn_statistics.py",
+  "script_sha256": "69009a1a96e1b7679d849ed772378af8dc78b13d3218d3c9a54f87c6147584d0",
+  "model_sha256": "50e45eee6011f6602c358b9e5d3c392ee99e82a00aefe807dca9676b7e209ac2",
+  "device": "cuda",
+  "torch": "2.7.1+cu118"
+}

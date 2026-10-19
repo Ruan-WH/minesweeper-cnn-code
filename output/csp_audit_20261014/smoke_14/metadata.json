@@ -1,0 +1,43 @@
+{
+  "agent": "csp",
+  "rows": 9,
+  "cols": 9,
+  "mines": [
+    14
+  ],
+  "episodes_per_mine_count": 100,
+  "seed": 20261013,
+  "episode_seed_rule": "(seed + zero_based_episode_index) modulo 2**32",
+  "first_click": 0,
+  "first_click_rule": "original environment rejection regeneration; safe, not necessarily zero",
+  "max_iterations_per_decision": 20000,
+  "timeout_seconds_per_decision": 0.0,
+  "tie_break": "proven safe first; otherwise lowest row-major index within absolute probability tolerance 1e-12",
+  "confidence_interval": "two-sided Wilson 95%",
+  "upstream_commit": "3a499ddee44bf7562808c8ab787bd173fb68fa2e",
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "logical_cpu_count": 32,
+  "dependencies": {
+    "numpy": "2.5.2",
+    "gym": "0.17.3",
+    "pygame": "2.6.1",
+    "torch": "2.7.1+cu118"
+  },
+  "source_sha256": {
+    "lib/csp_agent.py": "a2fbc9712208786b764e903b4247fcac8f34c870519aefbfab9287f373674d04",
+    "vendor/nabenabe_csp/probability.py": "8b31d9c2ad2b229e06502d5077d1e8e8a04c4f498a230b18580d5cfe1f1cd665",
+    "vendor/nabenabe_csp/constants.py": "6a7532763239bba86ff7796b4a8e7366eda77b20186acf3669bd6e8725b19b74",
+    "baseline_evaluation.py": "9543dee9df1f378680c80b52c171c0c4080450a9e535fd60e85a9e9ca105938a",
+    "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+    "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656",
+    "lib/models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1"
+  },
+  "model_path": null,
+  "model_sha256": null,
+  "cnn_dropout_layout": null,
+  "device": "cpu",
+  "cnn_deterministic_algorithms": false,
+  "paired_reference": null
+}

@@ -1,0 +1,186 @@
+[
+  {
+    "id": "Q1",
+    "status": "??",
+    "file": "lib/csp_agent.py",
+    "line": 182,
+    "verification": "test_visible_state_matches_cnn_encoding_without_truth_access",
+    "finding": "CSP receives a raw visible 2-D board; CNN receives an information-equivalent 10-channel one-hot encoding. Not the same tensor shape."
+  },
+  {
+    "id": "Q2",
+    "status": "??",
+    "file": "minesweeper_pygame.py",
+    "line": 106,
+    "verification": "test_visible_state_matches_cnn_encoding_without_truth_access",
+    "finding": "Scalar index: row*cols+col; original environment decodes divmod(index, cols)."
+  },
+  {
+    "id": "Q3",
+    "status": "??",
+    "file": "baseline_evaluation.py",
+    "line": 111,
+    "verification": "test_visible_state_matches_cnn_encoding_without_truth_access",
+    "finding": "Harness forces action 0 once; subsequent agent input is updated observation. Repeated/known clicks rejected."
+  },
+  {
+    "id": "Q4",
+    "status": "??",
+    "file": "minesweeper_pygame.py",
+    "line": 107,
+    "verification": "test_original_first_click_and_terminal_states",
+    "finding": "Only original environment regenerates on a mine at first click. Positive first clues were observed; no zero-first rule added."
+  },
+  {
+    "id": "Q5",
+    "status": "??",
+    "file": "baseline_evaluation.py",
+    "line": 124,
+    "verification": "interface test and 400 smoke games",
+    "finding": "Unknown/in-range validation before step; inferred mine membership checked separately."
+  },
+  {
+    "id": "Q6",
+    "status": "??",
+    "file": "baseline_evaluation.py",
+    "line": 127,
+    "verification": "test_budget_fallback_continues_original_game",
+    "finding": "Uses actual four-tuple step and original done/info status. Iteration/timeout/no-solution fallbacks continue playing. Unexpected program errors remain error rows in denominator, not fabricated lose statuses."
+  },
+  {
+    "id": "Q7",
+    "status": "??",
+    "file": "lib/csp_agent.py",
+    "line": 110,
+    "verification": "test_strict_rules_and_global_mine_deduction and exhaustive oracle",
+    "finding": "Inferred neighbor mines subtracted from clue; removed from variable set."
+  },
+  {
+    "id": "Q8",
+    "status": "???????",
+    "file": "lib/csp_agent.py",
+    "line": 151,
+    "verification": "test_no_solution_diagnostics_and_empty_candidate_guard",
+    "finding": "Candidate-empty fallback previously cleared inferred mines. Now emits diagnostic and raises instead of clicking an inferred mine. Valid smoke games never reached this edge."
+  },
+  {
+    "id": "Q9",
+    "status": "??",
+    "file": "lib/csp_agent.py",
+    "line": 126,
+    "verification": "strict rules, no-frontier and exhaustive oracle tests",
+    "finding": "Global remaining mines subtract inferred mines; completion also checks posterior mine mass."
+  },
+  {
+    "id": "Q10",
+    "status": "??",
+    "file": "vendor/nabenabe_csp/probability.py",
+    "line": 116,
+    "verification": "five-variable case and 500 exhaustive-oracle boards",
+    "finding": "Negative remaining mines discarded; combination table gives zero weight when remaining mines exceed land cells. No enumeration of land permutations required."
+  },
+  {
+    "id": "Q11",
+    "status": "??",
+    "file": "vendor/nabenabe_csp/probability.py",
+    "line": 116,
+    "verification": "test_combination_weighted_five_variable_example",
+    "finding": "Total weight=3; B=2/3; A=C=D=E=1/3; non-frontier probability uses C(L-1,R-1)."
+  },
+  {
+    "id": "Q12",
+    "status": "??",
+    "file": "lib/csp_agent.py",
+    "line": 151,
+    "verification": "test_no_solution_diagnostics_and_empty_candidate_guard",
+    "finding": "Heuristic zeros can occur on deliberately inconsistent clues, but Decision.exact=False; zero alone is never a safety certificate. Exact decisions come from strict deduction/complete enumeration/uniform no-frontier case."
+  },
+  {
+    "id": "Q13",
+    "status": "??",
+    "file": "lib/csp_agent.py",
+    "line": 45,
+    "verification": "test_incomplete_enumeration_is_never_used_as_probability",
+    "finding": "Check budget before each search iteration; on exception calculator counts are not used. Injected misleading partial counts do not affect returned heuristic probabilities."
+  },
+  {
+    "id": "Q14",
+    "status": "?????????",
+    "file": "lib/csp_agent.py",
+    "line": 151,
+    "verification": "budget, timeout, no-solution and original game tests",
+    "finding": "Ordinary fallback returns legal unknown action and does not end episode. If every remaining unknown is internally inferred as a mine, there is no legal non-mine candidate: explicit error instead of silently clearing deductions."
+  },
+  {
+    "id": "Q15",
+    "status": "??",
+    "file": "lib/csp_agent.py",
+    "line": 151,
+    "verification": "test_incomplete_enumeration_is_never_used_as_probability",
+    "finding": "Global density clipped to [0,1]; local fractions accepted only if 0<=remaining<=free; their average is bounded; exact=False."
+  },
+  {
+    "id": "Q16",
+    "status": "????????",
+    "file": "lib/csp_agent.py",
+    "line": 96,
+    "verification": "test_harness_writes_public_no_solution_diagnostics",
+    "finding": "Public board, clue constraints, remaining mine count, inferred mines, stage and iterations recorded; harness writes no_solution.jsonl with episode and seed. No hidden board included."
+  },
+  {
+    "id": "Q17",
+    "status": "????????",
+    "file": "baseline_evaluation.py",
+    "line": 156,
+    "verification": "smoke summaries and no-frontier test",
+    "finding": "Separate enumeration/iteration_limit/timeout/no_solution/no_constraints counters. Legacy fallbacks includes uniform no-frontier; new heuristic_fallbacks excludes it."
+  },
+  {
+    "id": "Q18",
+    "status": "????????????",
+    "file": "baseline_evaluation.py",
+    "line": 91,
+    "verification": "source inspection, wrapper test and smoke",
+    "finding": "Same 9x9, mine counts, first action and terminal rules as original CNN statistics. CSP harness reseeds each game; original CNN statistics seeds once per run. Same base seed alone does not verify pairing with prior CNN tables."
+  },
+  {
+    "id": "Q19",
+    "status": "??",
+    "file": "baseline_evaluation.py",
+    "line": 171,
+    "verification": "100 real games each at 10,14,18,22",
+    "finding": "Only public mine count changes; solver code is shared."
+  },
+  {
+    "id": "Q20",
+    "status": "????????",
+    "file": "tests/test_csp_baseline.py",
+    "line": 301,
+    "verification": "10 seeds repeated with exact actions/stats/hashes comparison",
+    "finding": "Deterministic action tie break and fixed iteration budget. Timings vary. Nonzero wall-clock timeout may change fallback boundaries; use timeout=0 for deterministic replay."
+  },
+  {
+    "id": "Q21",
+    "status": "????????",
+    "file": "baseline_evaluation.py",
+    "line": 150,
+    "verification": "all four smoke CSVs/summaries",
+    "finding": "Decision mean time, game time, max search iterations and decision-level fallback/enumeration ratios recorded. Game timer starts after reset/initial audit hash; includes first click. Decision timer excludes forced first click."
+  },
+  {
+    "id": "Q22",
+    "status": "????????",
+    "file": "baseline_evaluation.py",
+    "line": 36,
+    "verification": "BoardDeniedEnv test with audit hash disabled",
+    "finding": "Agent has no env reference and only sees observation copies. Harness does read env.board in audit_board_hash solely to record hashes, never to select actions. Literal claim that the entire harness never accesses env.board would be false."
+  },
+  {
+    "id": "Q23",
+    "status": "????????",
+    "file": "vendor/nabenabe_csp/UPSTREAM.md",
+    "line": 3,
+    "verification": "local UPSTREAM.md and LICENSE inspection",
+    "finding": "Apache-2.0 license retained; source and commit 3a499ddee44bf7562808c8ab787bd173fb68fa2e recorded; upstream Player/generator not used. Changes documented. Cite upstream in paper; do not claim remote commit reverified in this audit."
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": "Completed CSP formal evaluation only; original results were not edited.",
+  "raw_games_independently_checked": 40000,
+  "automated_tests_passed": 18,
+  "fresh_replayed_games": 164,
+  "fresh_replayed_decisions": 3579,
+  "all_20_heuristic_affected_games_replayed": 20,
+  "every_replayed_non_timing_field_matches": true,
+  "historical_1000_game_records_match_per_density": true,
+  "no_solution_decisions": 0,
+  "iteration_limit_decisions": 61,
+  "runtime_errors": 0,
+  "verified_file_sha256": {
+    "all_results.json": "5de5f71e012b4605e5b44f5708a2237d4aa3b8c722fe0e8b34a77797ad3f9731",
+    "results.csv": "c146cea91755faacc57aba771a7747ad5d2adb1d476acc5552d3b0302c42cafc",
+    "group_wins.csv": "7833156d8aa26acc5cccddc5232389d465bbf02461528a550a489b53e1c7900c",
+    "formal_results.txt": "2e37865c4be2b4021cd4edc1d1aa2ff0041b4970847cabdd2f4919c7ce3f3dce",
+    "manifest.json": "a0779eae40b06ed913831f9e4cdc4a358ed5d6c0494a2f2f99f7fddb2879d889",
+    "10/episodes.csv": "2a01d5bf76e313f8df04922c321d812188b4973ecdc141688bd19dc91f4ce5e2",
+    "14/episodes.csv": "aa9ac4701d9b9e104f6ee56f9b03a303bf002387cfdad06901f687250447debe",
+    "18/episodes.csv": "04ba081b1dc0f7d8cc932f0ba461cae645350bd2a97cfa8a4502050983aa0319",
+    "22/episodes.csv": "60f68efe4a21bea69346d2ba099bafb93893ac9a48d5c2b84fbb69188f29a1d8"
+  },
+  "limitations": [
+    "Replay is targeted sampling, not a second 40,000-game rerun.",
+    "Wilson intervals quantify finite-game uncertainty, not all algorithmic/systematic uncertainty.",
+    "Evaluation groups are not independent training runs.",
+    "Original CNN table runs are not verified board-paired with these CSP games.",
+    "Timings were collected from concurrent processes, not controlled serial benchmarking."
+  ]
+}

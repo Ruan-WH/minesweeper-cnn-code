@@ -1,0 +1,203 @@
+{
+  "unit_tests_passed": 6,
+  "startup": {
+    "loss": "BCEWithLogitsLoss",
+    "loss_weight": null,
+    "pos_weight": null,
+    "reduction": "mean",
+    "dropout": [
+      0.3,
+      0.3
+    ],
+    "augmentation": true,
+    "optimizer": "Adam",
+    "optimizer_defaults": {
+      "lr": 1e-05,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": false
+    },
+    "initial_lr": 1e-05,
+    "current_lr": 1e-05,
+    "scheduler": "CosineAnnealingLR",
+    "T_max": 5000,
+    "eta_min": 1e-07,
+    "scheduler_step_frequency": "once after each full 1024-sample buffer optimization",
+    "models_module_path": "E:\\minesweeper_cnn\\lib\\models.py",
+    "reference_path": "E:\\minesweeper_cnn\\minesweeper_train_cnn.py",
+    "pretrained_sha256": "0c5b06481b98980c29e4fe75ebe630a156409e1db8dd8379dac955ab8f6e2c34"
+  },
+  "real_preflight_summary": {
+    "finished": false,
+    "steps_14": 975,
+    "steps_18": 1073,
+    "total_adaptation_steps": 2048,
+    "phase": 1,
+    "games_completed": {
+      "14": 74,
+      "18": 88
+    },
+    "wins": {
+      "14": 10,
+      "18": 2
+    },
+    "online_win_rate": {
+      "14": 0.13513513513513514,
+      "18": 0.022727272727272728
+    },
+    "recent_win_rate": {
+      "14": 0.13513513513513514,
+      "18": 0.022727272727272728
+    },
+    "recent_window_lengths": {
+      "14": 74,
+      "18": 88
+    },
+    "games_started": {
+      "14": 75,
+      "18": 88
+    },
+    "budget_truncated": {
+      "14": 0,
+      "18": 0
+    },
+    "buffer_optimizations_by_phase": {
+      "1": 2,
+      "2": 0
+    },
+    "adam_updates_by_phase": {
+      "1": 640,
+      "2": 0
+    },
+    "mixed_buffers": 2,
+    "pending_samples": 0,
+    "discarded_samples": [],
+    "optimizer_restart_steps": [],
+    "learning_rate": 9.999996091637172e-06,
+    "best_18_online_win_rate": null,
+    "best_18_step": null,
+    "best_18_checkpoint": null,
+    "elapsed_seconds": 4.326725900002202
+  },
+  "real_first_two_buffers": [
+    {
+      "event": "buffer_optimized",
+      "total_adaptation_steps": 1024,
+      "steps_14": 510,
+      "steps_18": 514,
+      "phase": 1,
+      "samples_by_mines": {
+        "18": 514,
+        "14": 510
+      },
+      "adam_updates": 320,
+      "learning_rate": 9.999999022909197e-06,
+      "scheduler_last_epoch": 1
+    },
+    {
+      "event": "buffer_optimized",
+      "total_adaptation_steps": 2048,
+      "steps_14": 975,
+      "steps_18": 1073,
+      "phase": 1,
+      "samples_by_mines": {
+        "18": 559,
+        "14": 465
+      },
+      "adam_updates": 320,
+      "learning_rate": 9.999996091637172e-06,
+      "scheduler_last_epoch": 2
+    }
+  ],
+  "smoke_summary": {
+    "finished": true,
+    "steps_14": 1079,
+    "steps_18": 1077,
+    "total_adaptation_steps": 2156,
+    "phase": 2,
+    "games_completed": {
+      "14": 205,
+      "18": 203
+    },
+    "wins": {
+      "14": 0,
+      "18": 0
+    },
+    "online_win_rate": {
+      "14": 0.0,
+      "18": 0.0
+    },
+    "recent_win_rate": {
+      "14": 0.0,
+      "18": 0.0
+    },
+    "recent_window_lengths": {
+      "14": 5,
+      "18": 5
+    },
+    "games_started": {
+      "14": 206,
+      "18": 204
+    },
+    "budget_truncated": {
+      "14": 1,
+      "18": 1
+    },
+    "buffer_optimizations_by_phase": {
+      "1": 1,
+      "2": 1
+    },
+    "adam_updates_by_phase": {
+      "1": 320,
+      "2": 320
+    },
+    "mixed_buffers": 2,
+    "pending_samples": 0,
+    "discarded_samples": [
+      {
+        "reason": "optimizer_boundary",
+        "step": 1075,
+        "samples": 51,
+        "samples_by_mines": {
+          "18": 32,
+          "14": 19
+        }
+      },
+      {
+        "reason": "final_budget",
+        "step": 2156,
+        "samples": 57,
+        "samples_by_mines": {
+          "14": 37,
+          "18": 20
+        }
+      }
+    ],
+    "optimizer_restart_steps": [
+      1075
+    ],
+    "learning_rate": 9.999999022909197e-06,
+    "best_18_online_win_rate": 0.0,
+    "best_18_step": 58,
+    "best_18_checkpoint": "mixed_best_18_online.dat",
+    "elapsed_seconds": 5.685597699997743
+  },
+  "source_sha256": {
+    "lib/models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+    "lib/wrappers.py": "bf87e9cf3598edddef8260c6ef8e5851a2b685ae80d774aae71ac39598f42588",
+    "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+    "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656",
+    "minesweeper_train_mixed.py": "06422acacbcd0f10376ef8ecda8cdff32ebab07c6e2a9d4118255ad6306e13eb",
+    "reference_training": "a6a32d5d746f92a56f6b3b5ce0926649fa7c50b5ad7d870806c43f828916ad0e"
+  }
+}

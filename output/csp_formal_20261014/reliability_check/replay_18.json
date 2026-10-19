@@ -1,0 +1,347 @@
+{
+  "passed": true,
+  "mines": 18,
+  "replayed_games": 42,
+  "decisions_checked": 903,
+  "all_heuristic_affected_games_replayed": 6,
+  "non_timing_fields_match": true,
+  "test_oracle_note": "Truth accessed only after action selection to validate deductions; it does not influence the replayed policy.",
+  "records": [
+    {
+      "episode": 0,
+      "seed": 20261013,
+      "status": "lose",
+      "steps": 40,
+      "iteration_limit": 0,
+      "actions_sha256": "e27fb1f19ee67ebf4d0ffe65e8ae43f613754409efaacdaa2b7dec725321474c"
+    },
+    {
+      "episode": 1,
+      "seed": 20261014,
+      "status": "win",
+      "steps": 30,
+      "iteration_limit": 0,
+      "actions_sha256": "6190e230298d83ac017019318d10a5085cc03a3f6af4aa17eccd179c26107234"
+    },
+    {
+      "episode": 10,
+      "seed": 20261023,
+      "status": "lose",
+      "steps": 10,
+      "iteration_limit": 0,
+      "actions_sha256": "8a7ef138130f1c3ed8c5adafe248a2f5c799dd3d679500989065353ad0bf0a09"
+    },
+    {
+      "episode": 11,
+      "seed": 20261024,
+      "status": "win",
+      "steps": 30,
+      "iteration_limit": 0,
+      "actions_sha256": "b3e93b51cc188022a50db81e20eecd58227579699cd466d783118e699ceb277d"
+    },
+    {
+      "episode": 46,
+      "seed": 20261059,
+      "status": "lose",
+      "steps": 4,
+      "iteration_limit": 0,
+      "actions_sha256": "ce18f5c9b62e24ece371f92f5bbdb067a5a59a86e5d0f3ecfff02e17da6446d2"
+    },
+    {
+      "episode": 49,
+      "seed": 20261062,
+      "status": "lose",
+      "steps": 27,
+      "iteration_limit": 0,
+      "actions_sha256": "83540c2f9585ed4ad67cdfe50a8478c32a16e38967cf57823bb8504164d5c41d"
+    },
+    {
+      "episode": 91,
+      "seed": 20261104,
+      "status": "win",
+      "steps": 27,
+      "iteration_limit": 0,
+      "actions_sha256": "a922e4e13e8090e7487368d9609e36a95b6f8c76c5ea913753bfa8a904d8c31d"
+    },
+    {
+      "episode": 150,
+      "seed": 20261163,
+      "status": "win",
+      "steps": 35,
+      "iteration_limit": 0,
+      "actions_sha256": "e76c58488c01b9f7f4441348ef45aa7957da1c5872f4e45ec736b758852dbac3"
+    },
+    {
+      "episode": 822,
+      "seed": 20261835,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 999,
+      "seed": 20262012,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 1000,
+      "seed": 20262013,
+      "status": "lose",
+      "steps": 12,
+      "iteration_limit": 0,
+      "actions_sha256": "a14cb0a7b618ff209ee8b2aedb8708c3aa259090bd4b57e8cfa39418180e04b9"
+    },
+    {
+      "episode": 1350,
+      "seed": 20262363,
+      "status": "win",
+      "steps": 29,
+      "iteration_limit": 0,
+      "actions_sha256": "ba8fd41f8c0b332213abf57d18032c062fe33e1709be38be3f5c54013ddcab5a"
+    },
+    {
+      "episode": 1872,
+      "seed": 20262885,
+      "status": "lose",
+      "steps": 5,
+      "iteration_limit": 0,
+      "actions_sha256": "109582864c59425cdd25a0f1b522fba49f275e40f272e1a91b671d92d2ff7808"
+    },
+    {
+      "episode": 1999,
+      "seed": 20263012,
+      "status": "lose",
+      "steps": 5,
+      "iteration_limit": 0,
+      "actions_sha256": "f07dddb5622a40e941e03a5cc58cdfd9bcab97a39f62261cbb245483ead52ae2"
+    },
+    {
+      "episode": 2000,
+      "seed": 20263013,
+      "status": "win",
+      "steps": 40,
+      "iteration_limit": 0,
+      "actions_sha256": "bc08b40bc76535a42f90351447b8daf0bfbbe95db7461c447f6a009b4bb0013c"
+    },
+    {
+      "episode": 2048,
+      "seed": 20263061,
+      "status": "win",
+      "steps": 38,
+      "iteration_limit": 1,
+      "actions_sha256": "cc5ef4f9d1d3c460eb1ffb5bc2c98cbc1b82eaaaa7f989502cb0854a85a4bfe7"
+    },
+    {
+      "episode": 2152,
+      "seed": 20263165,
+      "status": "lose",
+      "steps": 45,
+      "iteration_limit": 1,
+      "actions_sha256": "d925d94a9ed03ea7ae694552247bd5bd4f5d2a514ac6c4f3c820bd2c41d10657"
+    },
+    {
+      "episode": 2457,
+      "seed": 20263470,
+      "status": "win",
+      "steps": 38,
+      "iteration_limit": 0,
+      "actions_sha256": "7afe57bd0f63b6329f264e5bf9ed0adbe6bf0cf59565fa977faf7c92f04d94e1"
+    },
+    {
+      "episode": 2999,
+      "seed": 20264012,
+      "status": "lose",
+      "steps": 25,
+      "iteration_limit": 0,
+      "actions_sha256": "c1fcf1dbd903a2d3e512f7c27df716a410acdfa8f69720e6b174f640c8f61bb3"
+    },
+    {
+      "episode": 3000,
+      "seed": 20264013,
+      "status": "lose",
+      "steps": 25,
+      "iteration_limit": 0,
+      "actions_sha256": "ed157e22f61e55c80d31e365f7526a60bcaf99a7a5c429d58126b2522c98753a"
+    },
+    {
+      "episode": 3455,
+      "seed": 20264468,
+      "status": "win",
+      "steps": 34,
+      "iteration_limit": 0,
+      "actions_sha256": "5adb4f3e62e7c7dab2f6a8df87df613575c457a9714e9f0f4ffcd79db2e8760f"
+    },
+    {
+      "episode": 3999,
+      "seed": 20265012,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 4000,
+      "seed": 20265013,
+      "status": "win",
+      "steps": 54,
+      "iteration_limit": 0,
+      "actions_sha256": "750ab4f92a1077da0a2868e8d8dd72ebc22d149fa7d5874be7e16005e610b299"
+    },
+    {
+      "episode": 4263,
+      "seed": 20265276,
+      "status": "lose",
+      "steps": 16,
+      "iteration_limit": 1,
+      "actions_sha256": "eb14413619457b46468ea8b1fbd903908d1f60f9c748e15979bbfdcf66edb69a"
+    },
+    {
+      "episode": 4466,
+      "seed": 20265479,
+      "status": "lose",
+      "steps": 25,
+      "iteration_limit": 3,
+      "actions_sha256": "7ed278c0be0e99f402b0aa711dac7521477c711d2a42fa418472f96df7b30867"
+    },
+    {
+      "episode": 4540,
+      "seed": 20265553,
+      "status": "win",
+      "steps": 49,
+      "iteration_limit": 4,
+      "actions_sha256": "e68941de5a88790887010aed692f9594374740d0a45f9b77175e7bad557efa42"
+    },
+    {
+      "episode": 4999,
+      "seed": 20266012,
+      "status": "lose",
+      "steps": 18,
+      "iteration_limit": 0,
+      "actions_sha256": "b05fba75aa402ac2c284545cf1a34dd378e2e3a1949345af922a2d21e48e9154"
+    },
+    {
+      "episode": 5000,
+      "seed": 20266013,
+      "status": "lose",
+      "steps": 30,
+      "iteration_limit": 0,
+      "actions_sha256": "56ef5dc17fea12fe9bc45a534bd01c817f7cd3b3957c24b76f1e1d82865cb2e6"
+    },
+    {
+      "episode": 5999,
+      "seed": 20267012,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 6000,
+      "seed": 20267013,
+      "status": "win",
+      "steps": 37,
+      "iteration_limit": 0,
+      "actions_sha256": "dfb24474a2cb01069c18113b61f8e9fe9e90ee414706dbc71a416b4437d2750c"
+    },
+    {
+      "episode": 6068,
+      "seed": 20267081,
+      "status": "win",
+      "steps": 35,
+      "iteration_limit": 0,
+      "actions_sha256": "31b123fdf5aa1b61671a7e864da69ff29c9f05e98d3da6eeaad88e611741be64"
+    },
+    {
+      "episode": 6609,
+      "seed": 20267622,
+      "status": "win",
+      "steps": 40,
+      "iteration_limit": 0,
+      "actions_sha256": "6adfac6a96076ab6d402c718e7c9834c39461d0e713dab4e9513d9bdd1b9ed74"
+    },
+    {
+      "episode": 6999,
+      "seed": 20268012,
+      "status": "lose",
+      "steps": 3,
+      "iteration_limit": 0,
+      "actions_sha256": "e337c9e9a29ce870b2a1575ae747064a571c6ac15e060b4df39741d670fcca41"
+    },
+    {
+      "episode": 7000,
+      "seed": 20268013,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 7679,
+      "seed": 20268692,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 7999,
+      "seed": 20269012,
+      "status": "lose",
+      "steps": 3,
+      "iteration_limit": 0,
+      "actions_sha256": "e337c9e9a29ce870b2a1575ae747064a571c6ac15e060b4df39741d670fcca41"
+    },
+    {
+      "episode": 8000,
+      "seed": 20269013,
+      "status": "lose",
+      "steps": 4,
+      "iteration_limit": 0,
+      "actions_sha256": "618a5857b446b6e60bc3482c368bd44a8dfc055d94798e227f6116c813156b7b"
+    },
+    {
+      "episode": 8062,
+      "seed": 20269075,
+      "status": "win",
+      "steps": 54,
+      "iteration_limit": 3,
+      "actions_sha256": "22d2d52047f1260c910bbaa5b93afc9917c0c0e3fddd86d549e6f5a39da709f4"
+    },
+    {
+      "episode": 8999,
+      "seed": 20270012,
+      "status": "win",
+      "steps": 52,
+      "iteration_limit": 0,
+      "actions_sha256": "7e751f72f0a40e6d9444149426a8436bcffb195a127e3917da45a29e7911bf52"
+    },
+    {
+      "episode": 9000,
+      "seed": 20270013,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 9278,
+      "seed": 20270291,
+      "status": "lose",
+      "steps": 2,
+      "iteration_limit": 0,
+      "actions_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135"
+    },
+    {
+      "episode": 9999,
+      "seed": 20271012,
+      "status": "lose",
+      "steps": 10,
+      "iteration_limit": 0,
+      "actions_sha256": "cc710bb8e8db248e39fe20e7cf2c8c7bcc3171712a36e2fa5977423d5eef02a3"
+    }
+  ]
+}

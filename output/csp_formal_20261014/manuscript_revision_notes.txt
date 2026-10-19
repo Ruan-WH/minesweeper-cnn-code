@@ -1,0 +1,50 @@
+Provisional revision notes; not a replacement for the manuscript and not finalized.
+
+Available unified 18-mine CNN checkpoint results (10,000 games each):
+SCL Online Best: 2,038 wins, 20.38%, Wilson CI 19.60-21.18%.
+From Scratch Online Best: 1,019 wins, 10.19%, CI 9.61-10.80%.
+Direct Transfer Online Best: 490 wins, 4.90%, CI 4.49-5.34%.
+Mixed Adaptation Online Best: 264 wins, 2.64%, CI 2.34-2.97%.
+Mixed Final: 193 wins, 1.93%, CI 1.68-2.22%.
+
+Abstract/Conclusion updates to make after the formal CSP results are available:
+1. Replace 20.37% with the specific newly measured SCL result, 20.38%, when
+   referring to this 18-mine evaluation. Identify the checkpoint selection rule.
+2. Remove the claim that training from scratch was almost unable to learn;
+   the supplied scratch checkpoint achieved 10.19% under the unified evaluation.
+3. Do not retain the fivefold 14-mine training-efficiency claim unless actual
+   matched-budget records and its precise comparison substantiate it.
+4. Do not infer that Dropout improves reasoning capability from win rates alone.
+   State an empirical ablation effect only if the corresponding evidence exists.
+5. Present SCL as an improvement to staged CNN training, not as a claim of
+   superiority over all traditional solvers. Insert the completed CSP evidence.
+6. Best checkpoints were selected from online training metrics at different
+   interaction counts. These are not matched-budget final-weight comparisons.
+7. Ten evaluation groups measure testing variation for one trained checkpoint;
+   they are not ten independent training seeds. Report Wilson CI separately.
+8. CSP and the existing CNN tables use common game rules and independent random
+   evaluation protocols, not verified board-by-board pairing.
+
+Section 3.5 methods text (results paragraph remains pending):
+We additionally evaluated a constraint-based Minesweeper solver adapted from
+nabenabe0928/mine-sweeper-solver (commit
+3a499ddee44bf7562808c8ab787bd173fb68fa2e, Apache-2.0). The agent uses only revealed
+clues, unknown-cell locations, and the public total mine count. Deterministic
+constraint propagation identifies safe cells and mines. When no safe action is
+established, the solver enumerates feasible frontier assignments and weights
+them by the number of compatible non-frontier mine placements. It selects the
+unknown cell with minimum mine probability, breaking ties by row-major index.
+
+Each decision is limited to 20,000 search iterations; no wall-clock cutoff is
+used. If enumeration exceeds this budget, incomplete configuration counts are
+discarded and an explicitly logged heuristic risk estimate is used. No-frontier
+uniform probabilities are recorded separately from heuristic fallbacks. All
+games remain in the evaluation denominator, including any recorded errors.
+The solver is evaluated on 9 x 9 boards with 10, 14, 18, and 22 mines, with 10,000
+games per condition and ten consecutive groups of 1,000 games. Episode seeds
+are (20261013 + episode index) modulo 2^32. The first click is the top-left cell,
+and the original environment guarantees safety without requiring a zero clue.
+
+Pending: insert validated formal CSP wins, Wilson intervals, group SD, and
+search-budget diagnostics; compare only with documented SCL/SP measurements.
+No SP values or manuscript source files were available in the current request.

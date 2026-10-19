@@ -1,0 +1,99 @@
+[
+  {
+    "mines": 10,
+    "wins": 902,
+    "episodes": 1000,
+    "win_rate": 0.902,
+    "ci95": [
+      0.882005297700964,
+      0.9189179884766496
+    ],
+    "seconds": 41.643016100000295,
+    "losses": 98,
+    "errors": 0,
+    "games_with_fallback": 1,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 18775,
+      "deduced_safe": 16163,
+      "enumerations": 2611,
+      "enumeration_iterations": 157489,
+      "no_constraints": 1,
+      "fallbacks": 1
+    }
+  },
+  {
+    "mines": 14,
+    "wins": 746,
+    "episodes": 1000,
+    "win_rate": 0.746,
+    "ci95": [
+      0.7181143099237187,
+      0.7720029249013881
+    ],
+    "seconds": 173.34863989999985,
+    "losses": 254,
+    "errors": 0,
+    "games_with_fallback": 4,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 25402,
+      "enumerations": 5537,
+      "enumeration_iterations": 608577,
+      "deduced_safe": 19861,
+      "no_constraints": 4,
+      "fallbacks": 4
+    }
+  },
+  {
+    "mines": 18,
+    "wins": 461,
+    "episodes": 1000,
+    "win_rate": 0.461,
+    "ci95": [
+      0.4303127166140634,
+      0.49198577054780995
+    ],
+    "seconds": 464.93747810000013,
+    "losses": 539,
+    "errors": 0,
+    "games_with_fallback": 14,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 24553,
+      "enumerations": 8179,
+      "enumeration_iterations": 1425611,
+      "deduced_safe": 16360,
+      "no_constraints": 14,
+      "fallbacks": 14
+    }
+  },
+  {
+    "mines": 22,
+    "wins": 215,
+    "episodes": 1000,
+    "win_rate": 0.215,
+    "ci95": [
+      0.19065343629137976,
+      0.2415278160453867
+    ],
+    "seconds": 769.5535493000002,
+    "losses": 785,
+    "errors": 0,
+    "games_with_fallback": 30,
+    "games_with_budget_exhaustion": 5,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 19235,
+      "enumerations": 8896,
+      "enumeration_iterations": 2405490,
+      "deduced_safe": 10308,
+      "no_constraints": 25,
+      "fallbacks": 31,
+      "iteration_limit": 6
+    }
+  }
+]

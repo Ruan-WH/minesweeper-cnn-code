@@ -1,0 +1,8 @@
+{
+  "tests_run": 18,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "temporary_directory_note": "Normal inherited Windows permissions used for test temporary directories only; originals and formal data unchanged."
+}

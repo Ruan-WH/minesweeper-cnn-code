@@ -1,0 +1,90 @@
+[
+  {
+    "mines": 10,
+    "wins": 10,
+    "episodes": 10,
+    "win_rate": 1.0,
+    "ci95": [
+      0.7224672001371107,
+      0.9999999999999999
+    ],
+    "seconds": 0.09022240000012971,
+    "losses": 0,
+    "errors": 0,
+    "games_with_fallback": 6,
+    "games_with_budget_exhaustion": 6,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 186,
+      "deduced_safe": 169,
+      "fallbacks": 17,
+      "iteration_limit": 17
+    }
+  },
+  {
+    "mines": 14,
+    "wins": 5,
+    "episodes": 10,
+    "win_rate": 0.5,
+    "ci95": [
+      0.236593090512564,
+      0.7634069094874361
+    ],
+    "seconds": 0.1013358000000153,
+    "losses": 5,
+    "errors": 0,
+    "games_with_fallback": 9,
+    "games_with_budget_exhaustion": 9,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 171,
+      "fallbacks": 47,
+      "iteration_limit": 47,
+      "deduced_safe": 124
+    }
+  },
+  {
+    "mines": 18,
+    "wins": 1,
+    "episodes": 10,
+    "win_rate": 0.1,
+    "ci95": [
+      0.017876213095072896,
+      0.4041500267952385
+    ],
+    "seconds": 0.09620570000015505,
+    "losses": 9,
+    "errors": 0,
+    "games_with_fallback": 10,
+    "games_with_budget_exhaustion": 10,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 117,
+      "fallbacks": 63,
+      "iteration_limit": 63,
+      "deduced_safe": 54
+    }
+  },
+  {
+    "mines": 22,
+    "wins": 0,
+    "episodes": 10,
+    "win_rate": 0.0,
+    "ci95": [
+      0.0,
+      0.2775327998628892
+    ],
+    "seconds": 0.05357380000032208,
+    "losses": 10,
+    "errors": 0,
+    "games_with_fallback": 10,
+    "games_with_budget_exhaustion": 10,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 71,
+      "fallbacks": 41,
+      "iteration_limit": 41,
+      "deduced_safe": 30
+    }
+  }
+]

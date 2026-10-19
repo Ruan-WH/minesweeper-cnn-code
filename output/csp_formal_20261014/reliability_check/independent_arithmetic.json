@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "checked_games": 40000,
+  "method": "Raw-row reconciliation; independently implemented 50-digit Decimal Wilson calculation and fsum-based population SD.",
+  "all_frozen_sources_verified": true,
+  "workspace_matches_frozen_sources": {
+    "lib/csp_agent.py": true,
+    "lib/models.py": true,
+    "lib/wrappers.py": true,
+    "vendor/__init__.py": true,
+    "vendor/nabenabe_csp/__init__.py": true,
+    "vendor/nabenabe_csp/probability.py": true,
+    "vendor/nabenabe_csp/constants.py": true,
+    "vendor/nabenabe_csp/LICENSE": true,
+    "vendor/nabenabe_csp/UPSTREAM.md": true,
+    "baseline_evaluation.py": true,
+    "minesweeper_test_csp_statistics.py": true,
+    "minesweeper_pygame.py": true,
+    "constants.py": true,
+    "init_pygame.py": true
+  },
+  "results": [
+    {
+      "mines": 10,
+      "wins": 9004,
+      "groups": [
+        902,
+        906,
+        884,
+        905,
+        897,
+        908,
+        898,
+        885,
+        904,
+        915
+      ],
+      "group_SD_pp": 0.9286549412995107,
+      "ci95": [
+        0.8943759359523252,
+        0.906116558152437
+      ],
+      "unique_initial_boards": 10000,
+      "unique_first_click_boards": 10000
+    },
+    {
+      "mines": 14,
+      "wins": 7422,
+      "groups": [
+        746,
+        749,
+        739,
+        726,
+        735,
+        752,
+        734,
+        732,
+        755,
+        754
+      ],
+      "group_SD_pp": 0.9775479527879961,
+      "ci95": [
+        0.7335347977722403,
+        0.750679193417004
+      ],
+      "unique_initial_boards": 10000,
+      "unique_first_click_boards": 10000
+    },
+    {
+      "mines": 18,
+      "wins": 4717,
+      "groups": [
+        461,
+        473,
+        485,
+        477,
+        466,
+        467,
+        465,
+        484,
+        462,
+        477
+      ],
+      "group_SD_pp": 0.833126641033642,
+      "ci95": [
+        0.4619286296639755,
+        0.4814931046438048
+      ],
+      "unique_initial_boards": 10000,
+      "unique_first_click_boards": 10000
+    },
+    {
+      "mines": 22,
+      "wins": 2073,
+      "groups": [
+        215,
+        199,
+        207,
+        211,
+        204,
+        214,
+        204,
+        205,
+        208,
+        206
+      ],
+      "group_SD_pp": 0.4648655719667787,
+      "ci95": [
+        0.19946797552406512,
+        0.21535681712212898
+      ],
+      "unique_initial_boards": 10000,
+      "unique_first_click_boards": 10000
+    }
+  ]
+}

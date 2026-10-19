@@ -1,0 +1,23 @@
+Formal CSP evaluation: 9 x 9; 10,000 games per mine count; 40,000 games total.
+Base seed 20261013; per-game seed = (base + zero-based index) modulo 2^32.
+20,000 iterations/decision; wall-clock cutoff disabled; frozen source snapshot.
+Win-rate CIs are Wilson 95%; group SD is population SD across ten 1,000-game groups (pp).
+These evaluation groups are not independent training runs.
+Unified game rules with CNN, independent random testing; not board-by-board paired.
+Concurrent local CPU timings are not isolated serial latency benchmarks.
+
+Mines | Wins/10000 | Win rate | Wilson 95% CI | Group SD (pp)
+10 | 9004/10000 | 90.04% | 89.44-90.61% | 0.93
+14 | 7422/10000 | 74.22% | 73.35-75.07% | 0.98
+18 | 4717/10000 | 47.17% | 46.19-48.15% | 0.83
+22 | 2073/10000 | 20.73% | 19.95-21.54% | 0.46
+
+Diagnostics (decision counts exclude forced first click):
+10 mines: decisions=188387, rule-safe=162889, enumerations=25486, iteration-limit=0, timeout=0, no-solution=0, no-frontier=12, heuristic-fallback=0, affected games=0, errors=0; mean/game=0.020753s, mean/decision=0.001046s, max iterations=4268
+Group wins: 902, 906, 884, 905, 897, 908, 898, 885, 904, 915
+14 mines: decisions=251472, rule-safe=197260, enumerations=54144, iteration-limit=5, timeout=0, no-solution=0, no-frontier=63, heuristic-fallback=5, affected games=1, errors=0; mean/game=0.095807s, mean/decision=0.003753s, max iterations=20000
+Group wins: 746, 749, 739, 726, 735, 752, 734, 732, 755, 754
+18 mines: decisions=244281, rule-safe=163369, enumerations=80767, iteration-limit=13, timeout=0, no-solution=0, no-frontier=132, heuristic-fallback=13, affected games=6, errors=0; mean/game=0.366811s, mean/decision=0.014938s, max iterations=20000
+Group wins: 461, 473, 485, 477, 466, 467, 465, 484, 462, 477
+22 mines: decisions=186698, rule-safe=100349, enumerations=86022, iteration-limit=43, timeout=0, no-solution=0, no-frontier=284, heuristic-fallback=43, affected games=13, errors=0; mean/game=0.617897s, mean/decision=0.033001s, max iterations=20000
+Group wins: 215, 199, 207, 211, 204, 214, 204, 205, 208, 206

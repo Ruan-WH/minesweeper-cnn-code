@@ -1,0 +1,6 @@
+﻿method,pretraining_10,adaptation_14,adaptation_18,adaptation_total,total,evidence
+SCL full run,6000000,1000000,850000,,7850000,"User-reported nominal budget; 18-mine log last recorded action step=842747, earlier-stage provenance not verified."
+Direct Transfer full run,6000000,0,1850000,,7850000,User-reported nominal budget; no matching training log or resume checkpoint found.
+Mixed Final,6000000,1000000,850000,,7850000,Adaptation counts verified in summary/resume; pretraining budget user-reported.
+Mixed Best,6000000,,,26571,6026571,Best adaptation step verified; per-density counters at best step unavailable because events.jsonl is absent. Pretraining budget user-reported.
+From Scratch full run,0,0,9000000,,9000000,User-reported nominal budget; matching revised log last recorded step=9576293 (truncated final record). This is not verified as final stop step.

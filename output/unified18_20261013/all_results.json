@@ -1,0 +1,301 @@
+{
+  "protocol": {
+    "board": [
+      9,
+      9
+    ],
+    "mine_count": 18,
+    "groups": 10,
+    "games_per_group": 1000,
+    "seed": 20261013,
+    "script": "minesweeper_test_cnn_statistics.py",
+    "first_action": 0,
+    "eval_mode": true,
+    "seed_scope": "once per model run; no per-game reseeding",
+    "group_SD": "np.std, ddof=0, percentage points",
+    "CI": "Wilson, z=1.959963984540054",
+    "training_seeds": "These are test-group statistics for one checkpoint per method, not variation across independent training seeds.",
+    "fairness_limit": "Final/fixed-budget checkpoints for SCL, Direct Transfer and From Scratch were not found in the specified directories. Best checkpoints are not budget-matched endpoints.",
+    "paired_boards": "No per-game board hashes recorded by the original statistics script in these runs."
+  },
+  "results": [
+    {
+      "model_name": "scl_best",
+      "model_path": "E:\\minesweeper_cnn\\models\\CNN-1770464098\\Minesweeper-v0-best_win_rate.dat",
+      "mine_count": 18,
+      "test_games": 10000,
+      "wins": 2038,
+      "win_rate": 0.2038,
+      "win_rate_percent": 20.380000000000003,
+      "wilson_ci95_percent": [
+        19.601927089147818,
+        21.180820974331063
+      ],
+      "group_SD_pp": 1.1338430226446692,
+      "group_wins": [
+        205,
+        191,
+        213,
+        210,
+        215,
+        193,
+        213,
+        204,
+        180,
+        214
+      ],
+      "test_seed": 20261013,
+      "checkpoint_step": null,
+      "checkpoint_rule": "Online Best",
+      "seconds": 196.41213690000586,
+      "device": "cuda",
+      "torch": "2.7.1+cu118",
+      "numpy": "2.5.2",
+      "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+      "script_path": "E:\\minesweeper_cnn\\minesweeper_test_cnn_statistics.py",
+      "script_sha256": "503a481c1998f79bc9e1c4811e8f07f7838a6d999b9858b446c1a06ecdacafd8",
+      "model_sha256": "5472430b182aacceacd1a9eb4b79b9bb5e87be1a7eefcc23d5058828f2715749",
+      "source_sha256": {
+        "lib\\models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+        "lib\\wrappers.py": "bf87e9cf3598edddef8260c6ef8e5851a2b685ae80d774aae71ac39598f42588",
+        "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+        "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656"
+      },
+      "protocol": "Original script; 10 groups x 1000 games, fixed first click 0, eval mode, minimum raw output over unknown cells; RNG seeded once before execution; group SD uses ddof=0.",
+      "training_strategy": "SCL (Best)",
+      "checkpoint_step_inferred_from_first_max_online_win_rate": 679615,
+      "checkpoint_step_inference_note": "18-mine stage only; assumes original strict-improvement save rule and that this log belongs to the supplied weight. Actual checkpoint has no step metadata."
+    },
+    {
+      "model_name": "scratch_best",
+      "model_path": "E:\\minesweeper_cnn\\models\\majorrevised\\CNN-1791814428\\Minesweeper-v0-best_win_rate.dat",
+      "mine_count": 18,
+      "test_games": 10000,
+      "wins": 1019,
+      "win_rate": 0.1019,
+      "win_rate_percent": 10.190000000000001,
+      "wilson_ci95_percent": [
+        9.612281799686313,
+        10.798292150586956
+      ],
+      "group_SD_pp": 0.9782126558167197,
+      "group_wins": [
+        120,
+        92,
+        89,
+        106,
+        93,
+        99,
+        115,
+        96,
+        100,
+        109
+      ],
+      "test_seed": 20261013,
+      "checkpoint_step": null,
+      "checkpoint_rule": "Online Best",
+      "seconds": 178.89689019999787,
+      "device": "cuda",
+      "torch": "2.7.1+cu118",
+      "numpy": "2.5.2",
+      "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+      "script_path": "E:\\minesweeper_cnn\\minesweeper_test_cnn_statistics.py",
+      "script_sha256": "503a481c1998f79bc9e1c4811e8f07f7838a6d999b9858b446c1a06ecdacafd8",
+      "model_sha256": "302c58081cff2f561e153bfe0fee641f7231e07790c6ee9acea298b93b7e2014",
+      "source_sha256": {
+        "lib\\models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+        "lib\\wrappers.py": "bf87e9cf3598edddef8260c6ef8e5851a2b685ae80d774aae71ac39598f42588",
+        "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+        "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656"
+      },
+      "protocol": "Original script; 10 groups x 1000 games, fixed first click 0, eval mode, minimum raw output over unknown cells; RNG seeded once before execution; group SD uses ddof=0.",
+      "training_strategy": "From Scratch (Best)",
+      "checkpoint_step_inferred_from_first_max_online_win_rate": 5816200,
+      "checkpoint_step_inference_note": "Assumes original strict-improvement save rule and that revised log belongs to the supplied weight. Log has incomplete final record; checkpoint contains no step metadata."
+    },
+    {
+      "model_name": "direct_best",
+      "model_path": "E:\\minesweeper_cnn\\models\\majorrevised\\CNN-1791822068\\Minesweeper-v0-best_win_rate.dat",
+      "mine_count": 18,
+      "test_games": 10000,
+      "wins": 490,
+      "win_rate": 0.049,
+      "win_rate_percent": 4.9,
+      "wilson_ci95_percent": [
+        4.493951670786393,
+        5.340684982248636
+      ],
+      "group_SD_pp": 0.5385164807134504,
+      "group_wins": [
+        59,
+        54,
+        45,
+        50,
+        46,
+        52,
+        50,
+        39,
+        44,
+        51
+      ],
+      "test_seed": 20261013,
+      "checkpoint_step": null,
+      "checkpoint_rule": "Online Best",
+      "seconds": 148.63227059999917,
+      "device": "cuda",
+      "torch": "2.7.1+cu118",
+      "numpy": "2.5.2",
+      "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+      "script_path": "E:\\minesweeper_cnn\\minesweeper_test_cnn_statistics.py",
+      "script_sha256": "503a481c1998f79bc9e1c4811e8f07f7838a6d999b9858b446c1a06ecdacafd8",
+      "model_sha256": "e534b394a1b6936b0f836b5bb39001a088976bd1b65bab67d415a5b9a99ec676",
+      "source_sha256": {
+        "lib\\models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+        "lib\\wrappers.py": "bf87e9cf3598edddef8260c6ef8e5851a2b685ae80d774aae71ac39598f42588",
+        "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+        "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656"
+      },
+      "protocol": "Original script; 10 groups x 1000 games, fixed first click 0, eval mode, minimum raw output over unknown cells; RNG seeded once before execution; group SD uses ddof=0.",
+      "training_strategy": "Direct Transfer (Best)"
+    },
+    {
+      "model_name": "mixed_best",
+      "training_strategy": "Mixed Adaptation (Best)",
+      "model_path": "E:\\minesweeper_cnn\\output\\mixed1\\mixed_best_18_online.dat",
+      "mine_count": 18,
+      "test_games": 10000,
+      "wins": 264,
+      "win_rate": 0.0264,
+      "win_rate_percent": 2.64,
+      "wilson_ci95_percent": [
+        2.343495852636433,
+        2.972876473034054
+      ],
+      "group_SD_pp": 0.4841487374764082,
+      "group_wins": [
+        26,
+        34,
+        27,
+        25,
+        16,
+        26,
+        27,
+        24,
+        25,
+        34
+      ],
+      "test_seed": 20261013,
+      "checkpoint_step": 26571,
+      "checkpoint_step_unit": "adaptation environment interactions",
+      "checkpoint_rule": "Online Best",
+      "seconds": 130.8622808,
+      "model_sha256": "865e447c9be8cb522d881653af434554983b9cbc1a56d74c9267e86affd0d9cf",
+      "script_sha256": "69009a1a96e1b7679d849ed772378af8dc78b13d3218d3c9a54f87c6147584d0",
+      "evidence": "Reused completed original-statistics-script evaluation; not retested."
+    },
+    {
+      "model_name": "mixed_final",
+      "training_strategy": "Mixed Adaptation (Final)",
+      "model_path": "E:\\minesweeper_cnn\\output\\mixed1\\mixed_final.dat",
+      "mine_count": 18,
+      "test_games": 10000,
+      "wins": 193,
+      "win_rate": 0.0193,
+      "win_rate_percent": 1.9300000000000002,
+      "wilson_ci95_percent": [
+        1.678232864046499,
+        2.2186847393103495
+      ],
+      "group_SD_pp": 0.3796050579220461,
+      "group_wins": [
+        21,
+        26,
+        19,
+        23,
+        21,
+        14,
+        14,
+        16,
+        17,
+        22
+      ],
+      "test_seed": 20261013,
+      "checkpoint_step": 1850000,
+      "checkpoint_step_unit": "adaptation environment interactions",
+      "checkpoint_rule": "Final",
+      "seconds": 133.22788469999796,
+      "model_sha256": "50e45eee6011f6602c358b9e5d3c392ee99e82a00aefe807dca9676b7e209ac2",
+      "script_sha256": "69009a1a96e1b7679d849ed772378af8dc78b13d3218d3c9a54f87c6147584d0",
+      "evidence": "Reused completed original-statistics-script evaluation; not retested."
+    }
+  ],
+  "training_budgets": [
+    {
+      "method": "SCL full run",
+      "pretraining_10": 6000000,
+      "adaptation_14": 1000000,
+      "adaptation_18": 850000,
+      "total": 7850000,
+      "evidence": "User-reported nominal budget; 18-mine log last recorded action step=842747, earlier-stage provenance not verified."
+    },
+    {
+      "method": "Direct Transfer full run",
+      "pretraining_10": 6000000,
+      "adaptation_14": 0,
+      "adaptation_18": 1850000,
+      "total": 7850000,
+      "evidence": "User-reported nominal budget; no matching training log or resume checkpoint found."
+    },
+    {
+      "method": "Mixed Final",
+      "pretraining_10": 6000000,
+      "adaptation_14": 1000000,
+      "adaptation_18": 850000,
+      "total": 7850000,
+      "evidence": "Adaptation counts verified in summary/resume; pretraining budget user-reported."
+    },
+    {
+      "method": "Mixed Best",
+      "pretraining_10": 6000000,
+      "adaptation_14": null,
+      "adaptation_18": null,
+      "adaptation_total": 26571,
+      "total": 6026571,
+      "evidence": "Best adaptation step verified; per-density counters at best step unavailable because events.jsonl is absent. Pretraining budget user-reported."
+    },
+    {
+      "method": "From Scratch full run",
+      "pretraining_10": 0,
+      "adaptation_14": 0,
+      "adaptation_18": 9000000,
+      "total": 9000000,
+      "evidence": "User-reported nominal budget; matching revised log last recorded step=9576293 (truncated final record). This is not verified as final stop step."
+    }
+  ],
+  "training_configuration_audit": {
+    "Mixed": {
+      "loss": "unweighted mean BCEWithLogitsLoss",
+      "dropout": [
+        0.3,
+        0.3
+      ],
+      "augmentation": true,
+      "optimizer": "Adam",
+      "initial_lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "scheduler": "CosineAnnealingLR",
+      "T_max": 5000,
+      "eta_min": 1e-07,
+      "scheduler_frequency": "once per complete 1024-sample buffer",
+      "evidence": "Mixed embedded metadata and saved reference snapshots inspected in prior analysis"
+    },
+    "SCL": "Historical training configuration not recoverable from state_dict/scalar logs alone; user reports BCE LR=1e-4.",
+    "From Scratch": "Historical training configuration not recoverable from state_dict/scalar logs alone.",
+    "Direct Transfer": "Historical training configuration not recoverable from state_dict alone."
+  }
+}

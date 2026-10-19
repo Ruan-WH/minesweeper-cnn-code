@@ -1,0 +1,218 @@
+{
+  "logs\\steplearning\\18\\CNN-1770464098": {
+    "folder": "logs\\steplearning\\18\\CNN-1770464098",
+    "complete_records": 200437,
+    "incomplete_tails": [],
+    "tags": [
+      "speed",
+      "episode_reward",
+      "moves_made",
+      "cells_left",
+      "mean_episode_reward",
+      "win_rate"
+    ],
+    "scalars": {
+      "speed": {
+        "count": 50059,
+        "first": {
+          "step": 42,
+          "value": 112.25979614257812
+        },
+        "last": {
+          "step": 842747,
+          "value": 499.73834228515625
+        },
+        "first_max": {
+          "step": 634585,
+          "value": 1972.6951904296875
+        }
+      },
+      "episode_reward": {
+        "count": 50059,
+        "first": {
+          "step": 42,
+          "value": 113.0
+        },
+        "last": {
+          "step": 842747,
+          "value": -81.0
+        },
+        "first_max": {
+          "step": 654755,
+          "value": 138.5
+        }
+      },
+      "moves_made": {
+        "count": 50059,
+        "first": {
+          "step": 42,
+          "value": 42.0
+        },
+        "last": {
+          "step": 842747,
+          "value": 4.0
+        },
+        "first_max": {
+          "step": 747646,
+          "value": 61.0
+        }
+      },
+      "cells_left": {
+        "count": 50059,
+        "first": {
+          "step": 42,
+          "value": 0.0
+        },
+        "last": {
+          "step": 842747,
+          "value": 60.0
+        },
+        "first_max": {
+          "step": 191,
+          "value": 62.0
+        }
+      },
+      "mean_episode_reward": {
+        "count": 100,
+        "first": {
+          "step": 7593,
+          "value": -49.03300094604492
+        },
+        "last": {
+          "step": 841712,
+          "value": -39.597999572753906
+        },
+        "first_max": {
+          "step": 679615,
+          "value": -27.232999801635742
+        }
+      },
+      "win_rate": {
+        "count": 100,
+        "first": {
+          "step": 7593,
+          "value": 0.13199999928474426
+        },
+        "last": {
+          "step": 841712,
+          "value": 0.17599999904632568
+        },
+        "first_max": {
+          "step": 679615,
+          "value": 0.24199999868869781
+        }
+      }
+    }
+  },
+  "logs\\revised": {
+    "folder": "logs\\revised",
+    "complete_records": 4302296,
+    "incomplete_tails": [
+      {
+        "file": "logs\\revised\\events.out.tfevents.1791814432.autodl-container-072f4ea16e-d86792de.1951.0",
+        "offset": 217039381,
+        "reason": "incomplete record"
+      }
+    ],
+    "tags": [
+      "speed",
+      "episode_reward",
+      "moves_made",
+      "cells_left",
+      "mean_episode_reward",
+      "win_rate"
+    ],
+    "scalars": {
+      "speed": {
+        "count": 1074500,
+        "first": {
+          "step": 4,
+          "value": 2.000847578048706
+        },
+        "last": {
+          "step": 9576293,
+          "value": 548.4005126953125
+        },
+        "first_max": {
+          "step": 7299972,
+          "value": 1062.4169921875
+        }
+      },
+      "episode_reward": {
+        "count": 1074500,
+        "first": {
+          "step": 4,
+          "value": -82.5
+        },
+        "last": {
+          "step": 9576293,
+          "value": -81.0
+        },
+        "first_max": {
+          "step": 4954271,
+          "value": 136.5
+        }
+      },
+      "moves_made": {
+        "count": 1074500,
+        "first": {
+          "step": 4,
+          "value": 4.0
+        },
+        "last": {
+          "step": 9576293,
+          "value": 4.0
+        },
+        "first_max": {
+          "step": 6879763,
+          "value": 61.0
+        }
+      },
+      "cells_left": {
+        "count": 1074499,
+        "first": {
+          "step": 4,
+          "value": 38.0
+        },
+        "last": {
+          "step": 9576289,
+          "value": 61.0
+        },
+        "first_max": {
+          "step": 25,
+          "value": 62.0
+        }
+      },
+      "mean_episode_reward": {
+        "count": 2148,
+        "first": {
+          "step": 2467,
+          "value": -82.052001953125
+        },
+        "last": {
+          "step": 9572406,
+          "value": -77.0719985961914
+        },
+        "first_max": {
+          "step": 5943536,
+          "value": -63.25899887084961
+        }
+      },
+      "win_rate": {
+        "count": 2148,
+        "first": {
+          "step": 2467,
+          "value": 0.0
+        },
+        "last": {
+          "step": 9572406,
+          "value": 0.0
+        },
+        "first_max": {
+          "step": 5816200,
+          "value": 0.04399999976158142
+        }
+      }
+    }
+  }
+}

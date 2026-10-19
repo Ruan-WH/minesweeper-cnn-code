@@ -1,0 +1,27 @@
+test_retained_and_removed_dropout_checkpoint_layouts (test_cnn_baseline_adapter.CNNAdapterTests.test_retained_and_removed_dropout_checkpoint_layouts) ... ok
+test_budget_and_timeout_discard_partial_counts (test_csp_baseline.CSPTests.test_budget_and_timeout_discard_partial_counts) ... ok
+test_budget_fallback_continues_original_game (test_csp_baseline.CSPTests.test_budget_fallback_continues_original_game) ... pygame 2.6.1 (SDL 2.28.4, Python 3.12.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+ok
+test_combination_weighted_five_variable_example (test_csp_baseline.CSPTests.test_combination_weighted_five_variable_example) ... ok
+test_episode_seed_reproducibility_and_audit_isolation (test_csp_baseline.CSPTests.test_episode_seed_reproducibility_and_audit_isolation) ... ok
+test_globally_unsatisfiable_enumeration (test_csp_baseline.CSPTests.test_globally_unsatisfiable_enumeration) ... ok
+test_harness_writes_public_no_solution_diagnostics (test_csp_baseline.CSPTests.test_harness_writes_public_no_solution_diagnostics) ... {"mines": 18, "wins": 0, "episodes": 1, "win_rate": 0.0, "ci95": [0.0, 0.7934506856227626], "seconds": 0.005149399999936577, "losses": 1, "errors": 0, "games_with_fallback": 1, "games_with_budget_exhaustion": 0, "games_with_timeout": 0, "games_with_no_solution": 1, "games_with_no_constraints": 0, "games_with_heuristic_fallback": 1, "games_with_solver_issue": 1, "mean_game_seconds": 0.0018553999999539883, "decision_count": 6, "mean_decision_seconds": 0.00023363333334221656, "max_search_iterations": 0, "iteration_limit_decision_rate": 0.0, "enumeration_success_decision_rate": 0.0, "heuristic_fallback_decision_rate": 1.0, "timeout_decision_rate": 0.0, "no_solution_decision_rate": 1.0, "no_constraints_decision_rate": 0.0, "counts": {"decisions": 6, "fallbacks": 6, "heuristic_fallbacks": 6, "no_solution": 6, "enumeration_iterations": 0}}
+Results: E:\minesweeper_cnn\output\csp_formal_20261014\reliability_check\tmp6nyuhkc7
+ok
+test_incomplete_enumeration_is_never_used_as_probability (test_csp_baseline.CSPTests.test_incomplete_enumeration_is_never_used_as_probability) ... ok
+test_inconsistent_clues_and_no_unknown (test_csp_baseline.CSPTests.test_inconsistent_clues_and_no_unknown) ... ok
+test_interface_is_observation_only_and_deterministic (test_csp_baseline.CSPTests.test_interface_is_observation_only_and_deterministic) ... ok
+test_no_frontier_is_exact_uniform_not_heuristic (test_csp_baseline.CSPTests.test_no_frontier_is_exact_uniform_not_heuristic) ... ok
+test_no_solution_diagnostics_and_empty_candidate_guard (test_csp_baseline.CSPTests.test_no_solution_diagnostics_and_empty_candidate_guard) ... ok
+test_original_first_click_and_terminal_states (test_csp_baseline.CSPTests.test_original_first_click_and_terminal_states) ... ok
+test_probabilities_against_exhaustive_oracle (test_csp_baseline.CSPTests.test_probabilities_against_exhaustive_oracle) ... ok
+test_proven_safe_priority_and_first_click_probability (test_csp_baseline.CSPTests.test_proven_safe_priority_and_first_click_probability) ... ok
+test_strict_rules_and_global_mine_deduction (test_csp_baseline.CSPTests.test_strict_rules_and_global_mine_deduction) ... ok
+test_upstream_propagation_regression (test_csp_baseline.CSPTests.test_upstream_propagation_regression) ... ok
+test_visible_state_matches_cnn_encoding_without_truth_access (test_csp_baseline.CSPTests.test_visible_state_matches_cnn_encoding_without_truth_access) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 19.517s
+
+OK

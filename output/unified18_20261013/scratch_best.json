@@ -1,0 +1,44 @@
+{
+  "model_name": "scratch_best",
+  "model_path": "E:\\minesweeper_cnn\\models\\majorrevised\\CNN-1791814428\\Minesweeper-v0-best_win_rate.dat",
+  "mine_count": 18,
+  "test_games": 10000,
+  "wins": 1019,
+  "win_rate": 0.1019,
+  "win_rate_percent": 10.190000000000001,
+  "wilson_ci95_percent": [
+    9.612281799686313,
+    10.798292150586956
+  ],
+  "group_SD_pp": 0.9782126558167197,
+  "group_wins": [
+    120,
+    92,
+    89,
+    106,
+    93,
+    99,
+    115,
+    96,
+    100,
+    109
+  ],
+  "test_seed": 20261013,
+  "checkpoint_step": null,
+  "checkpoint_rule": "Online Best",
+  "seconds": 178.89689019999787,
+  "device": "cuda",
+  "torch": "2.7.1+cu118",
+  "numpy": "2.5.2",
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+  "script_path": "E:\\minesweeper_cnn\\minesweeper_test_cnn_statistics.py",
+  "script_sha256": "503a481c1998f79bc9e1c4811e8f07f7838a6d999b9858b446c1a06ecdacafd8",
+  "model_sha256": "302c58081cff2f561e153bfe0fee641f7231e07790c6ee9acea298b93b7e2014",
+  "source_sha256": {
+    "lib\\models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+    "lib\\wrappers.py": "bf87e9cf3598edddef8260c6ef8e5851a2b685ae80d774aae71ac39598f42588",
+    "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+    "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656"
+  },
+  "protocol": "Original script; 10 groups x 1000 games, fixed first click 0, eval mode, minimum raw output over unknown cells; RNG seeded once before execution; group SD uses ddof=0."
+}

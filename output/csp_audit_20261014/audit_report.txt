@@ -1,0 +1,133 @@
+CSP targeted audit: engineering validation only; no formal 10,000-game evaluation launched.
+18 automated tests passed (17 CSP + 1 CNN adapter), including 500 random exhaustive-oracle boards.
+Runtime note: Windows execution account could not use tempfile mkdir(mode=0700). Final tests used inherited permissions for temporary directories in this workspace only; no production permission logic was changed.
+Minimal code changes: lib/csp_agent.py (public no-solution diagnostics, no inferred-mine candidate escape, heuristic fallback counter); baseline_evaluation.py (decision timing/search metrics, diagnostic persistence and inferred-mine action guard); tests/test_csp_baseline.py (targeted regression/integration tests).
+Default limits: 20000 iterations per decision, timeout_seconds=0. Same per-episode seed base20261013. Original environment, CNN train/test, model weights unchanged.
+Probability fixture: A+B=1, B+C=1, 2 total mines, 2 non-frontier variables. Configuration weights 2 and 1; B=2/3; A=C=D=E=1/3.
+No fallback, no-solution or performance conclusion for full 10000-game evaluation can be inferred from only 100 games per difficulty.
+Timing was measured with concurrent smoke jobs on the local machine and is not a calibrated serial benchmark.
+Source hashes:
+{
+  "lib/csp_agent.py": "a2fbc9712208786b764e903b4247fcac8f34c870519aefbfab9287f373674d04",
+  "baseline_evaluation.py": "9543dee9df1f378680c80b52c171c0c4080450a9e535fd60e85a9e9ca105938a",
+  "tests/test_csp_baseline.py": "4fb715c534346be94d482f651280378bafe1be3f913a693566ece0599e587a80",
+  "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+  "lib/models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+  "minesweeper_train_cnn.py": "a6a32d5d746f92a56f6b3b5ce0926649fa7c50b5ad7d870806c43f828916ad0e",
+  "minesweeper_test_cnn_statistics.py": "503a481c1998f79bc9e1c4811e8f07f7838a6d999b9858b446c1a06ecdacafd8"
+}
+
+Q1 ??
+  lib/csp_agent.py:182
+  Verification: test_visible_state_matches_cnn_encoding_without_truth_access
+  Finding: CSP receives a raw visible 2-D board; CNN receives an information-equivalent 10-channel one-hot encoding. Not the same tensor shape.
+
+Q2 ??
+  minesweeper_pygame.py:106
+  Verification: test_visible_state_matches_cnn_encoding_without_truth_access
+  Finding: Scalar index: row*cols+col; original environment decodes divmod(index, cols).
+
+Q3 ??
+  baseline_evaluation.py:111
+  Verification: test_visible_state_matches_cnn_encoding_without_truth_access
+  Finding: Harness forces action 0 once; subsequent agent input is updated observation. Repeated/known clicks rejected.
+
+Q4 ??
+  minesweeper_pygame.py:107
+  Verification: test_original_first_click_and_terminal_states
+  Finding: Only original environment regenerates on a mine at first click. Positive first clues were observed; no zero-first rule added.
+
+Q5 ??
+  baseline_evaluation.py:124
+  Verification: interface test and 400 smoke games
+  Finding: Unknown/in-range validation before step; inferred mine membership checked separately.
+
+Q6 ??
+  baseline_evaluation.py:127
+  Verification: test_budget_fallback_continues_original_game
+  Finding: Uses actual four-tuple step and original done/info status. Iteration/timeout/no-solution fallbacks continue playing. Unexpected program errors remain error rows in denominator, not fabricated lose statuses.
+
+Q7 ??
+  lib/csp_agent.py:110
+  Verification: test_strict_rules_and_global_mine_deduction and exhaustive oracle
+  Finding: Inferred neighbor mines subtracted from clue; removed from variable set.
+
+Q8 ???????
+  lib/csp_agent.py:151
+  Verification: test_no_solution_diagnostics_and_empty_candidate_guard
+  Finding: Candidate-empty fallback previously cleared inferred mines. Now emits diagnostic and raises instead of clicking an inferred mine. Valid smoke games never reached this edge.
+
+Q9 ??
+  lib/csp_agent.py:126
+  Verification: strict rules, no-frontier and exhaustive oracle tests
+  Finding: Global remaining mines subtract inferred mines; completion also checks posterior mine mass.
+
+Q10 ??
+  vendor/nabenabe_csp/probability.py:116
+  Verification: five-variable case and 500 exhaustive-oracle boards
+  Finding: Negative remaining mines discarded; combination table gives zero weight when remaining mines exceed land cells. No enumeration of land permutations required.
+
+Q11 ??
+  vendor/nabenabe_csp/probability.py:116
+  Verification: test_combination_weighted_five_variable_example
+  Finding: Total weight=3; B=2/3; A=C=D=E=1/3; non-frontier probability uses C(L-1,R-1).
+
+Q12 ??
+  lib/csp_agent.py:151
+  Verification: test_no_solution_diagnostics_and_empty_candidate_guard
+  Finding: Heuristic zeros can occur on deliberately inconsistent clues, but Decision.exact=False; zero alone is never a safety certificate. Exact decisions come from strict deduction/complete enumeration/uniform no-frontier case.
+
+Q13 ??
+  lib/csp_agent.py:45
+  Verification: test_incomplete_enumeration_is_never_used_as_probability
+  Finding: Check budget before each search iteration; on exception calculator counts are not used. Injected misleading partial counts do not affect returned heuristic probabilities.
+
+Q14 ?????????
+  lib/csp_agent.py:151
+  Verification: budget, timeout, no-solution and original game tests
+  Finding: Ordinary fallback returns legal unknown action and does not end episode. If every remaining unknown is internally inferred as a mine, there is no legal non-mine candidate: explicit error instead of silently clearing deductions.
+
+Q15 ??
+  lib/csp_agent.py:151
+  Verification: test_incomplete_enumeration_is_never_used_as_probability
+  Finding: Global density clipped to [0,1]; local fractions accepted only if 0<=remaining<=free; their average is bounded; exact=False.
+
+Q16 ????????
+  lib/csp_agent.py:96
+  Verification: test_harness_writes_public_no_solution_diagnostics
+  Finding: Public board, clue constraints, remaining mine count, inferred mines, stage and iterations recorded; harness writes no_solution.jsonl with episode and seed. No hidden board included.
+
+Q17 ????????
+  baseline_evaluation.py:156
+  Verification: smoke summaries and no-frontier test
+  Finding: Separate enumeration/iteration_limit/timeout/no_solution/no_constraints counters. Legacy fallbacks includes uniform no-frontier; new heuristic_fallbacks excludes it.
+
+Q18 ????????????
+  baseline_evaluation.py:91
+  Verification: source inspection, wrapper test and smoke
+  Finding: Same 9x9, mine counts, first action and terminal rules as original CNN statistics. CSP harness reseeds each game; original CNN statistics seeds once per run. Same base seed alone does not verify pairing with prior CNN tables.
+
+Q19 ??
+  baseline_evaluation.py:171
+  Verification: 100 real games each at 10,14,18,22
+  Finding: Only public mine count changes; solver code is shared.
+
+Q20 ????????
+  tests/test_csp_baseline.py:301
+  Verification: 10 seeds repeated with exact actions/stats/hashes comparison
+  Finding: Deterministic action tie break and fixed iteration budget. Timings vary. Nonzero wall-clock timeout may change fallback boundaries; use timeout=0 for deterministic replay.
+
+Q21 ????????
+  baseline_evaluation.py:150
+  Verification: all four smoke CSVs/summaries
+  Finding: Decision mean time, game time, max search iterations and decision-level fallback/enumeration ratios recorded. Game timer starts after reset/initial audit hash; includes first click. Decision timer excludes forced first click.
+
+Q22 ????????
+  baseline_evaluation.py:36
+  Verification: BoardDeniedEnv test with audit hash disabled
+  Finding: Agent has no env reference and only sees observation copies. Harness does read env.board in audit_board_hash solely to record hashes, never to select actions. Literal claim that the entire harness never accesses env.board would be false.
+
+Q23 ????????
+  vendor/nabenabe_csp/UPSTREAM.md:3
+  Verification: local UPSTREAM.md and LICENSE inspection
+  Finding: Apache-2.0 license retained; source and commit 3a499ddee44bf7562808c8ab787bd173fb68fa2e recorded; upstream Player/generator not used. Changes documented. Cite upstream in paper; do not claim remote commit reverified in this audit.

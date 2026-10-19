@@ -1,0 +1,50 @@
+[
+  {
+    "mines": 10,
+    "reference": "output\\csp_audit_20261014\\smoke_10\\episodes.csv",
+    "games_matched": 100,
+    "all_non_timing_game_and_solver_fields_match": true
+  },
+  {
+    "mines": 10,
+    "reference": "output\\csp_baseline\\final_validation1000\\10\\episodes.csv",
+    "games_matched": 1000,
+    "all_non_timing_game_and_solver_fields_match": true
+  },
+  {
+    "mines": 14,
+    "reference": "output\\csp_audit_20261014\\smoke_14\\episodes.csv",
+    "games_matched": 100,
+    "all_non_timing_game_and_solver_fields_match": true
+  },
+  {
+    "mines": 14,
+    "reference": "output\\csp_baseline\\final_validation1000\\14\\episodes.csv",
+    "games_matched": 1000,
+    "all_non_timing_game_and_solver_fields_match": true
+  },
+  {
+    "mines": 18,
+    "reference": "output\\csp_audit_20261014\\smoke_18\\episodes.csv",
+    "games_matched": 100,
+    "all_non_timing_game_and_solver_fields_match": true
+  },
+  {
+    "mines": 18,
+    "reference": "output\\csp_baseline\\final_validation1000\\18\\episodes.csv",
+    "games_matched": 1000,
+    "all_non_timing_game_and_solver_fields_match": true
+  },
+  {
+    "mines": 22,
+    "reference": "output\\csp_audit_20261014\\smoke_22\\episodes.csv",
+    "games_matched": 100,
+    "all_non_timing_game_and_solver_fields_match": true
+  },
+  {
+    "mines": 22,
+    "reference": "output\\csp_baseline\\final_validation1000\\22\\episodes.csv",
+    "games_matched": 1000,
+    "all_non_timing_game_and_solver_fields_match": true
+  }
+]

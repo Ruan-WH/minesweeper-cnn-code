@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+logs/
+runs/
+models/
+*.dat
+*.pt
+*.pth
+*.ckpt
+desktop.ini

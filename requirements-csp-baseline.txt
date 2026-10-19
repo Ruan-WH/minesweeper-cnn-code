@@ -1,0 +1,6 @@
+# Solver core uses NumPy only; the original gym runtime has transitive dependencies.
+# No PyTorch, python-constraint, or TensorBoard is needed for CSP runs.
+# Use Python 3.10+; actual versions are recorded in each run's metadata.json.
+numpy>=1.24,<3
+gym==0.17.3
+pygame==2.6.1

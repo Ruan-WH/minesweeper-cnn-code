@@ -1,0 +1,19 @@
+[
+  {
+    "mines": 18,
+    "wins": 26,
+    "episodes": 1000,
+    "win_rate": 0.026,
+    "ci95": [
+      0.017803938201616326,
+      0.03782382884268993
+    ],
+    "seconds": 18.789594800000486,
+    "losses": 974,
+    "errors": 0,
+    "games_with_fallback": 0,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "counts": {}
+  }
+]

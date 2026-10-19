@@ -1,0 +1,27 @@
+[
+  {
+    "mines": 22,
+    "wins": 215,
+    "episodes": 1000,
+    "win_rate": 0.215,
+    "ci95": [
+      0.19065343629137976,
+      0.2415278160453867
+    ],
+    "seconds": 769.5535493000002,
+    "losses": 785,
+    "errors": 0,
+    "games_with_fallback": 30,
+    "games_with_budget_exhaustion": 5,
+    "games_with_timeout": 0,
+    "counts": {
+      "decisions": 19235,
+      "enumerations": 8896,
+      "enumeration_iterations": 2405490,
+      "deduced_safe": 10308,
+      "no_constraints": 25,
+      "fallbacks": 31,
+      "iteration_limit": 6
+    }
+  }
+]

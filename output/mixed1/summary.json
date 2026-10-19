@@ -1,0 +1,72 @@
+{
+  "finished": true,
+  "steps_14": 1000000,
+  "steps_18": 850000,
+  "total_adaptation_steps": 1850000,
+  "phase": 2,
+  "games_completed": {
+    "14": 77765,
+    "18": 91602
+  },
+  "wins": {
+    "14": 7113,
+    "18": 543
+  },
+  "online_win_rate": {
+    "14": 0.09146788400951585,
+    "18": 0.005927818169908954
+  },
+  "recent_win_rate": {
+    "14": 0.068,
+    "18": 0.012
+  },
+  "recent_window_lengths": {
+    "14": 500,
+    "18": 500
+  },
+  "games_started": {
+    "14": 77766,
+    "18": 91603
+  },
+  "budget_truncated": {
+    "14": 1,
+    "18": 1
+  },
+  "buffer_optimizations_by_phase": {
+    "1": 976,
+    "2": 830
+  },
+  "adam_updates_by_phase": {
+    "1": 312320,
+    "2": 265600
+  },
+  "mixed_buffers": 1806,
+  "pending_samples": 0,
+  "discarded_samples": [
+    {
+      "reason": "optimizer_boundary",
+      "step": 1000000,
+      "samples": 576,
+      "samples_by_mines": {
+        "14": 386,
+        "18": 190
+      }
+    },
+    {
+      "reason": "final_budget",
+      "step": 1850000,
+      "samples": 80,
+      "samples_by_mines": {
+        "18": 80
+      }
+    }
+  ],
+  "optimizer_restart_steps": [
+    1000000
+  ],
+  "learning_rate": 9.336018152316603e-05,
+  "best_18_online_win_rate": 0.02,
+  "best_18_step": 26571,
+  "best_18_checkpoint": "mixed_best_18_online.dat",
+  "elapsed_seconds": 7094.484631229192
+}

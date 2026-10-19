@@ -1,0 +1,31 @@
+[
+  {
+    "mines": 10,
+    "wins": 91,
+    "episodes": 100,
+    "win_rate": 0.91,
+    "ci95": [
+      0.837737871472837,
+      0.9519274599974348
+    ],
+    "seconds": 1.847066000002087,
+    "losses": 9,
+    "errors": 0,
+    "games_with_fallback": 0,
+    "games_with_budget_exhaustion": 0,
+    "games_with_timeout": 0,
+    "mean_game_seconds": 0.017433384998876134,
+    "decision_count": 1885,
+    "mean_decision_seconds": 0.0008708898672081817,
+    "max_search_iterations": 489,
+    "iteration_limit_decision_rate": 0.0,
+    "enumeration_success_decision_rate": 0.12042440318302387,
+    "heuristic_fallback_decision_rate": 0.0,
+    "counts": {
+      "decisions": 1885,
+      "deduced_safe": 1658,
+      "enumerations": 227,
+      "enumeration_iterations": 12822
+    }
+  }
+]
