@@ -1,0 +1,53 @@
+{
+  "output": "E:\\minesweeper_cnn\\output\\scl_round2_smoke_20261022_v3\\smoke\\271828\\10",
+  "seed": 271828,
+  "stage": {
+    "mines": 10,
+    "budget": 1100
+  },
+  "window": 5,
+  "smoke": true,
+  "initial": null,
+  "config": {
+    "seeds": [
+      271828,
+      314159
+    ],
+    "historical_scl_seed": "unknown: original entry point does not seed or log RNGs",
+    "seed_audit_note": "No matches in pre-existing local py/json/txt/md/csv records; historical unrecorded SCL seed cannot be excluded.",
+    "protocol": "User confirmed buffer-level paired augmentation, per-episode full-500 rolling checkpoint selection, initial LR 1e-4",
+    "learning_rate": 0.0001,
+    "augmentation": true,
+    "selection": "rolling",
+    "window": 500,
+    "stages": [
+      {
+        "mines": 10,
+        "budget": 6000000
+      },
+      {
+        "mines": 14,
+        "budget": 1000000
+      },
+      {
+        "mines": 18,
+        "budget": 850000
+      }
+    ],
+    "min_free_gib": 2,
+    "progress_every": 10000,
+    "gpu": "0"
+  },
+  "source_hashes": {
+    "scl_round2.py": "609f8c9666688ca293a96eaa1c985d29d5865e46420d7581f3834d10d1b2dd86",
+    "minesweeper_train_cnn.py": "a09b55686a7022eb9a4481a4d36d7954019023c995ac08cf64880f69a002ccfe",
+    "minesweeper_train_mixed.py": "228cdd9826dd9d16558a8d630b3f868f77b611ae78d3eddae73c6dd8b8f016bf",
+    "lib/models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+    "lib/wrappers.py": "bf87e9cf3598edddef8260c6ef8e5851a2b685ae80d774aae71ac39598f42588",
+    "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+    "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656",
+    "init_pygame.py": "bf00e6a34475648a9dcdeaa332ae88eb7f5850e3dff92339806d93556aad5ac1",
+    "minesweeper_test_cnn_statistics.py": "503a481c1998f79bc9e1c4811e8f07f7838a6d999b9858b446c1a06ecdacafd8"
+  },
+  "device": "cuda"
+}

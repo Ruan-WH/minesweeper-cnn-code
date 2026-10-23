@@ -1,0 +1,1 @@
+{"actual_steps": 1100, "games": 217, "rolling_win_rate": 0.0, "loss": 0.5347681655548513, "learning_rate": 9.999999014026553e-05, "buffer_updates": 1, "adam_updates": 320, "augmentation_calls": 1, "pending_buffer_samples": 76, "speed": 469.2832764505018}

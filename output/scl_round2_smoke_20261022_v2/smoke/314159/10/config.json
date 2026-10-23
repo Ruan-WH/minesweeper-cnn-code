@@ -1,0 +1,106 @@
+{
+  "output": "E:\\minesweeper_cnn\\output\\scl_round2_smoke_20261022_v2\\smoke\\314159\\10",
+  "seed": 314159,
+  "stage": {
+    "mines": 10,
+    "budget": 1100
+  },
+  "window": 5,
+  "smoke": true,
+  "initial": null,
+  "config": {
+    "seeds": [
+      271828,
+      314159
+    ],
+    "historical_scl_seed": "unknown: original entry point does not seed or log RNGs",
+    "seed_audit_note": "No matches in pre-existing local py/json/txt/md/csv records; historical unrecorded SCL seed cannot be excluded.",
+    "protocol": "User confirmed buffer-level paired augmentation, per-episode full-500 rolling checkpoint selection, initial LR 1e-4",
+    "learning_rate": 0.0001,
+    "augmentation": true,
+    "selection": "rolling",
+    "window": 500,
+    "stages": [
+      {
+        "mines": 10,
+        "budget": 6000000
+      },
+      {
+        "mines": 14,
+        "budget": 1000000
+      },
+      {
+        "mines": 18,
+        "budget": 850000
+      }
+    ],
+    "min_free_gib": 2,
+    "progress_every": 10000,
+    "gpu": "0"
+  },
+  "source_hashes": {
+    "scl_round2.py": "8c8fec24cc4c8b1ec7113d4cbe1bab16537c73cbcbab4452cd3ee8e8f182366d",
+    "minesweeper_train_cnn.py": "a09b55686a7022eb9a4481a4d36d7954019023c995ac08cf64880f69a002ccfe",
+    "minesweeper_train_mixed.py": "228cdd9826dd9d16558a8d630b3f868f77b611ae78d3eddae73c6dd8b8f016bf",
+    "lib/models.py": "dd9504b61a0857887b855b190b41b761a64934786a9f76cbc3f628e2da29b1b1",
+    "lib/wrappers.py": "bf87e9cf3598edddef8260c6ef8e5851a2b685ae80d774aae71ac39598f42588",
+    "minesweeper_pygame.py": "d0ae91b33c68872174b874140ff24590ac9f09e92f5beebc69c820fbaa49421e",
+    "constants.py": "cb02d841aa78255a05244132ee7b30653520773711070e3d289c7d037b835656",
+    "init_pygame.py": "bf00e6a34475648a9dcdeaa332ae88eb7f5850e3dff92339806d93556aad5ac1",
+    "minesweeper_test_cnn_statistics.py": "503a481c1998f79bc9e1c4811e8f07f7838a6d999b9858b446c1a06ecdacafd8"
+  },
+  "device": "cuda",
+  "runtime": {
+    "loss": "BCEWithLogitsLoss",
+    "loss_weight": null,
+    "pos_weight": null,
+    "reduction": "mean",
+    "dropout": [
+      0.3,
+      0.3
+    ],
+    "augmentation": true,
+    "optimizer": "Adam",
+    "optimizer_defaults": {
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": false
+    },
+    "initial_lr": 0.0001,
+    "current_lr": 0.0001,
+    "scheduler": "CosineAnnealingLR",
+    "T_max": 5000,
+    "eta_min": 1e-07,
+    "scheduler_step_frequency": "once after each full 1024-sample buffer optimization",
+    "models_module_path": "E:\\minesweeper_cnn\\lib\\models.py",
+    "reference_path": "E:\\minesweeper_cnn\\minesweeper_train_cnn.py",
+    "pretrained_sha256": null
+  },
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+  "torch": "2.7.1+cu118",
+  "numpy": "2.5.2",
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "model": "Model(\n  (conv): Sequential(\n    (0): Conv2d(10, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): ReLU()\n    (2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (3): ReLU()\n    (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (5): ReLU()\n  )\n  (fc): Sequential(\n    (0): Linear(in_features=10368, out_features=512, bias=True)\n    (1): ReLU()\n    (2): Dropout(p=0.3, inplace=False)\n    (3): Linear(in_features=512, out_features=512, bias=True)\n    (4): ReLU()\n    (5): Dropout(p=0.3, inplace=False)\n    (6): Linear(in_features=512, out_features=81, bias=True)\n  )\n  (loss): BCEWithLogitsLoss()\n)",
+  "parameter_count": 5919953,
+  "buffer": {
+    "samples": 1024,
+    "epochs": 10,
+    "batch_size": 32,
+    "shuffle": true
+  },
+  "rng": "seed Python/NumPy/Torch CPU and CUDA before environment/model; same seed reset per stage; boards use global NumPy",
+  "augmentation": "one paired transform of whole full buffer, reference augment_data",
+  "checkpoint_rule": "strict improvement, full recent window, checked after every completed episode",
+  "partial_buffer": "no partial-buffer optimization; exact step budget may end within a game"
+}

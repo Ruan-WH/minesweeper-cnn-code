@@ -1,0 +1,105 @@
+第二轮返修：新增种子 SCL 自动训练
+
+入口：scl_round2.py
+配置：configs/scl_round2.json
+独立测试包装器：scl_round2_evaluate.py
+上传包：output/scl_round2_server_bundle.zip（仅源码、配置、测试和说明，无模型/旧日志）。
+本机训练已按用户要求停止，正式预算未开始；服务器环境及完整预算尚未验证。
+本机最终CUDA冒烟记录：output/scl_round2_smoke_20261022_v4/smoke_passed.json。
+上传包不包含本机冒烟输出，服务器启动时会重新自动检查。
+
+已核对的原代码
+minesweeper_train_cnn.py 的 CLI 只有 --cuda/--env/--reward/--win-rate。
+雷数写死为10，加载权重被注释，没有种子、交互预算或自动阶段切换。
+Agent 每个环境 step 采集一份样本，1024样本训练10 epochs，batch_size=32，shuffle=True。
+原模型为128卷积通道、512全连接宽度、两层Dropout(0.3)、未加权 mean BCEWithLogitsLoss。
+Adam 初始LR以当前工作区1e-4为准；Git基线与旧Mixed记录是1e-5。
+CosineAnnealingLR(T_max=5000, eta_min=1e-7)，每完成一个Buffer训练更新一次。
+原代码的数据增强被注释，原选模是500局非重叠分组；用户已明确确认本次
+采用原augment_data的Buffer级配对增强、每局检查最近完整500局滚动胜率，严格改善才保存。
+因此本次是用户确认的SCL协议，不能声称与未经核实的旧训练逐项完全相同。
+原文件不改动；从现有Mixed包装器复用AST安全加载器和增强包装器，避免原入口建目录、
+无限循环、每500局累积checkpoint、结束调用shutdown等副作用。
+
+种子审计
+原始SCL入口没有设置、保存训练种子；旧模型真正的训练种子未知。
+20261013为旧评估/Mixed种子，CSP评估逐局覆盖20261013到20271012。
+271828和314159在实施前的本地py/json/txt/md/csv记录中均无命中。
+不能证明它们不等于未留记录的历史训练种子。
+两条链的每个阶段开始前都重置Python、NumPy、PyTorch CPU/CUDA种子。
+环境布雷/重置使用NumPy全局RNG，无独立布雷RNG；同时初始化Gym spaces的种子。
+不改变原PyTorch确定性算法/后端选项；相同种子不等于跨硬件逐位相同。
+
+启动（项目根目录；云端须安装与原训练一致的依赖）
+python scl_round2.py --config configs/scl_round2.json --output output/scl_round2_NEW_RUN
+
+Linux服务器后台启动（在解压目录执行，输出目录名每次换新）：
+nohup python -u scl_round2.py --config configs/scl_round2.json --output output/scl_round2_server_01 > scl_round2_server_01.log 2>&1 &
+tail -f scl_round2_server_01.log
+已验证环境：Python3.12.13、torch2.7.1+cu118、numpy2.5.2、gym0.17.3、pygame2.6.1、tensorboard2.20.0。
+requirements-scl-round2.txt记录非torch依赖；PyTorch请按服务器原有CUDA环境单独安装。
+脚本实现了Linux flock与Windows msvcrt锁；本机只实测了Windows/CUDA，未实测Linux服务器。
+
+只做冒烟：
+python scl_round2.py --config configs/scl_round2.json --output output/scl_round2_NEW_SMOKE --smoke-only
+
+本机解释器：D:/Anaconda/envs/minesweeper_cnn/python.exe
+配置gpu字段指定物理GPU索引；父进程设置CUDA_VISIBLE_DEVICES，worker内只看见一张卡。
+父进程持有操作系统文件锁，同一项目/同一GPU的包装器不可重复启动。
+每次必须使用不存在的新输出目录；不支持从半途checkpoint恢复。
+不同项目副本/其他程序的GPU使用不在该文件锁控制范围内。
+
+自动顺序
+启动前检查至少2GiB空闲；每阶段和每次最优权重更新前继续检查。
+首先跑六个冒烟阶段：每阶段1100步、原1024 Buffer、10 epochs、窗口5局。
+冒烟数据单独写入smoke/，不能当成正式论文结果；正式阶段不会加载冒烟权重。
+只有六个冒烟阶段退出码、完成标记、步数、Buffer/Adam/增强/调度次数与最优权重
+加载及前向检查均通过，才自动启动formal/的六阶段正式训练。
+种子271828：10雷6000000步 → 本链10雷best → 14雷1000000步 → 本链14雷best → 18雷850000步。
+种子314159：从随机初始化10雷独立重跑同样链。
+每个阶段是全新单独进程，重新创建Adam、调度器和Buffer；只迁移最佳state_dict。
+每一时刻最多一个训练子进程；任一失败停止整个链并记录error.log。
+
+预算及磁盘
+每次真正完成env.step后增加独立计数，成功阶段须等于名义预算。
+Buffer不会迫使交互预算向上取整；最后不足1024的样本不做额外优化。
+记录残余Buffer样本及未结束游戏步数，不能声称所有交互都参与梯度更新。
+不按胜率/奖励提前终止，不在阶段结尾补齐游戏。
+正式预算每种子7850000步，两个种子15700000步（冒烟另计）。
+每阶段只保留一个best_win_rate.dat。写入临时文件、fsync、加载/前向验证后
+原子替换旧最佳；临时文件不是恢复checkpoint，正常成功后不会遗留。
+不保存optimizer/Buffer恢复快照；崩溃可能留下.dat.tmp，失败目录保留供检查。
+
+输出（OUTPUT为启动指定的新目录）
+OUTPUT/config.json、run.json、source_hashes.json、source_snapshot/：配置、状态、源码审计。
+OUTPUT/smoke_passed.json：只有整个冒烟链成功后才存在。
+OUTPUT/summary.json：每个完成阶段的完整JSON记录，持续更新。
+OUTPUT/active_worker.json：最近子进程PID与路径，历史记录不是实时存活证明。
+OUTPUT/{smoke,formal}/SEED/{10,14,18}/job.json：启动参数。
+各阶段config.json：模型结构、优化器默认值、调度、Buffer、增强、版本、种子等实际配置。
+各阶段console.log、events.jsonl、stats.txt、tensorboard/：训练日志。
+原TensorBoard的episode_reward/moves_made/cells_left/speed/mean_episode_reward/win_rate保留，
+新增rolling_win_rate、loss、learning_rate；stats.txt沿用原分号分隔格式，每500局追加。
+events.jsonl每次最优更新记录步数、完整窗口胜率、LR、路径、SHA256；定期记录运行指标。
+各阶段best.json、best_win_rate.dat：唯一最佳元数据及权重。
+各阶段result.json：开始结束时间、状态、预算、实际步数、best、耗时、残余样本等。
+OUTPUT/final_checkpoints.json：只有全部正式阶段成功才生成，包含两条18雷最终权重路径。
+OUTPUT/error.log：运行失败时保存错误；失败不能当成完成，禁止手工伪造完成标记。
+
+完整正式训练尚未结束时，下述路径只能视为预期路径：
+OUTPUT/formal/271828/18/best_win_rate.dat
+OUTPUT/formal/314159/18/best_win_rate.dat
+
+独立测试（训练完成后另外运行，不参与选模）
+python scl_round2_evaluate.py --model OUTPUT/formal/271828/18/best_win_rate.dat --output output/scl_test_271828_NEW
+python scl_round2_evaluate.py --model OUTPUT/formal/314159/18/best_win_rate.dat --output output/scl_test_314159_NEW
+两条命令也应串行运行。包装器通过AST仅替换原minesweeper_test_cnn_statistics.py中的
+model_path和环境雷数18，实际执行原10组×1000局循环，net.eval关闭Dropout，固定首点0，
+使用原环境首点安全规则。评估种子20261013在每次评估开始前设置一次。
+这对应先前CNN统计协议，与CSP逐局重置种子不同，不声称逐棋盘配对。
+result.json保存结果，console.log保存原输出。评估不在训练过程中自动执行。
+
+自动化检查
+python -m unittest discover -s tests -p test_scl_round2.py -v
+检查预算/种子有效性、六阶段顺序、两个种子初始化隔离、失败停止、缺失checkpoint阻断。
+真实CUDA冒烟还检查每个完整Buffer恰好1次增强、320次Adam更新、1次调度及权重加载。

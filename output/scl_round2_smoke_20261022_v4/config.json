@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    271828,
+    314159
+  ],
+  "historical_scl_seed": "unknown: original entry point does not seed or log RNGs",
+  "seed_audit_note": "No matches in pre-existing local py/json/txt/md/csv records; historical unrecorded SCL seed cannot be excluded.",
+  "protocol": "User confirmed buffer-level paired augmentation, per-episode full-500 rolling checkpoint selection, initial LR 1e-4",
+  "learning_rate": 0.0001,
+  "augmentation": true,
+  "selection": "rolling",
+  "window": 500,
+  "stages": [
+    {
+      "mines": 10,
+      "budget": 6000000
+    },
+    {
+      "mines": 14,
+      "budget": 1000000
+    },
+    {
+      "mines": 18,
+      "budget": 850000
+    }
+  ],
+  "min_free_gib": 2,
+  "progress_every": 10000,
+  "gpu": "0"
+}

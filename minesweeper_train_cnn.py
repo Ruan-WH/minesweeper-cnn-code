@@ -80,7 +80,7 @@ class Agent:
         self.model_dir = model_dir_cnn
 
         # 余弦退火，训练过程中学习率会自动调整
-        self.scheduler = lr_scheduler.CosineAnnealingLR(self.optimizer, T_max=5000, eta_min=1e-7)
+        # self.scheduler = lr_scheduler.CosineAnnealingLR(self.optimizer, T_max=5000, eta_min=1e-7)
 
         # 添加记录文件的标题栏
         if not os.path.exists(self.stats_file):
@@ -180,8 +180,8 @@ class Agent:
                 loss.backward()
                 self.optimizer.step()
         # 更新学习率
-        if hasattr(self, 'scheduler'):
-            self.scheduler.step()
+        # if hasattr(self, 'scheduler'):
+        #     self.scheduler.step()
 
     def increment_sample_size(self, feature, label):
         self.features[self.current_sample] = feature
@@ -217,7 +217,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     device = torch.device("cuda" if args.cuda else "cpu")
 
-    env = MinesweeperEnv(num_rows=9, num_cols=9, num_mines=10, render_mode="rgb_array")
+    env = MinesweeperEnv(num_rows=9, num_cols=9, num_mines=14, render_mode="rgb_array")
     env = CustomObservationWrapper(env, encoding_type='one_hot')
     print(env)
 
@@ -225,8 +225,8 @@ if __name__ == "__main__":
     writer = SummaryWriter(log_dir=log_dir, comment="-" + args.env)
     # writer = SummaryWriter(comment="-" + args.env) 删除
     # 加载模型(在已有模型基础上继续训练)
-    # model_path = "models/CNN-1772806163/Minesweeper-v0-best_win_rate.dat"
-    # net.load_state_dict(torch.load(model_path, map_location=device))
+    model_path = "models/CNN-1763950674/Minesweeper-v0-best_win_rate.dat"
+    net.load_state_dict(torch.load(model_path, map_location=device))
     print(net)
 
     agent = Agent(env, net, device, model_dir)

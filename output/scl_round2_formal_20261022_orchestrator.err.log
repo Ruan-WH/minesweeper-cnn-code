@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "E:\minesweeper_cnn\scl_round2.py", line 403, in <module>
+    main()
+  File "E:\minesweeper_cnn\scl_round2.py", line 399, in main
+    orchestrate(args)
+  File "E:\minesweeper_cnn\scl_round2.py", line 365, in orchestrate
+    run_chain(root, config, hashes, True, args.device, envvars, results)
+  File "E:\minesweeper_cnn\scl_round2.py", line 320, in run_chain
+    raise RuntimeError("Stage failed; no dependent stages started: " + str(out))
+RuntimeError: Stage failed; no dependent stages started: E:\minesweeper_cnn\output\scl_round2_formal_20261022\smoke\314159\18

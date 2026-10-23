@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "ended": "2026-10-22T09:31:51.493384+00:00",
+  "stages": 6,
+  "note": "1100 steps/stage, full 1024 buffer, original 10 epochs; selection window=5 FOR SMOKE ONLY"
+}

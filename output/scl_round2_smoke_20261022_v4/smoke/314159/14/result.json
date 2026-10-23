@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "started": "2026-10-22T09:31:36.685232+00:00",
+  "seed": 314159,
+  "mines": 14,
+  "budget": 1100,
+  "smoke": true,
+  "actual_steps": 1100,
+  "best": {
+    "step": 34,
+    "rolling_win_rate": 0.0,
+    "learning_rate": 0.0001,
+    "path": "E:\\minesweeper_cnn\\output\\scl_round2_smoke_20261022_v4\\smoke\\314159\\14\\best_win_rate.dat",
+    "sha256": "bcde41e8b81582db55b2ec2584e8d193673dde11ad189441dbb0b9888948d366"
+  },
+  "games": 210,
+  "rolling_win_rate": 0.0,
+  "loss": 0.47150369035080075,
+  "learning_rate": 9.999999014026553e-05,
+  "buffer_updates": 1,
+  "adam_updates": 320,
+  "augmentation_calls": 1,
+  "pending_buffer_samples": 76,
+  "speed": 442.83413848624497,
+  "ended": "2026-10-22T09:31:41.111573+00:00",
+  "elapsed_seconds": 4.42200000000048,
+  "partial_buffer_samples_discarded": 76,
+  "unfinished_game_moves": 7,
+  "checkpoint_verified": true
+}

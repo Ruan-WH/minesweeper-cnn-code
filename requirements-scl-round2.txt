@@ -1,0 +1,7 @@
+# Smoke-tested: Python 3.12.13, PyTorch 2.7.1+cu118 (install CUDA torch separately).
+# Retain the server's matching CUDA/PyTorch environment for the paper experiments.
+numpy==2.5.2
+gym==0.17.3
+pygame==2.6.1
+tensorboard==2.20.0
+tqdm

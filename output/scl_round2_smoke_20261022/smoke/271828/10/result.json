@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "started": "2026-10-22T09:26:30.007774+00:00",
+  "seed": 271828,
+  "mines": 10,
+  "budget": 1100,
+  "smoke": true,
+  "actual_steps": 29,
+  "best": {
+    "step": 29,
+    "rolling_win_rate": 0.0,
+    "learning_rate": 0.0001,
+    "path": "E:\\minesweeper_cnn\\output\\scl_round2_smoke_20261022\\smoke\\271828\\10\\best_win_rate.dat",
+    "sha256": "2d80b6e06fb33d368b847a8aead07e9a9c5d9057dc172ecb314cb2ab13cb3ef6"
+  },
+  "ended": "2026-10-22T09:26:41.121990+00:00",
+  "elapsed_seconds": 11.125,
+  "error": "Traceback (most recent call last):\n  File \"E:\\minesweeper_cnn\\scl_round2.py\", line 215, in worker\n    event(progress, type=\"best\", **report[\"best\"])\nTypeError: event() got multiple values for argument 'path'\n",
+  "returncode": 1,
+  "console_log": "E:\\minesweeper_cnn\\output\\scl_round2_smoke_20261022\\smoke\\271828\\10\\console.log"
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "E:\minesweeper_cnn\scl_round2.py", line 388, in <module>
+    main()
+  File "E:\minesweeper_cnn\scl_round2.py", line 380, in main
+    worker(json.loads(Path(args.worker).read_text(encoding="utf-8")))
+  File "E:\minesweeper_cnn\scl_round2.py", line 215, in worker
+    event(progress, type="best", **report["best"])
+TypeError: event() got multiple values for argument 'path'

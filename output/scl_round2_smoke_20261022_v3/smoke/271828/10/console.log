@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "E:\minesweeper_cnn\scl_round2.py", line 403, in <module>
+    main()
+  File "E:\minesweeper_cnn\scl_round2.py", line 395, in main
+    worker(json.loads(Path(args.worker).read_text(encoding="utf-8")))
+  File "E:\minesweeper_cnn\scl_round2.py", line 205, in worker
+    writer.add_scalar("speed", (step - episode_step) / (episode_now - episode_time), step)
+                               ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero

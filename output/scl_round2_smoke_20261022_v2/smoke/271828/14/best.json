@@ -1,0 +1,7 @@
+{
+  "step": 21,
+  "rolling_win_rate": 0.0,
+  "learning_rate": 0.0001,
+  "path": "E:\\minesweeper_cnn\\output\\scl_round2_smoke_20261022_v2\\smoke\\271828\\14\\best_win_rate.dat",
+  "sha256": "2d80b6e06fb33d368b847a8aead07e9a9c5d9057dc172ecb314cb2ab13cb3ef6"
+}

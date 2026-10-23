@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "started": "2026-10-22T09:30:36.398346+00:00",
+  "seed": 271828,
+  "mines": 10,
+  "budget": 1100,
+  "smoke": true,
+  "actual_steps": 9,
+  "best": null,
+  "ended": "2026-10-22T09:30:38.350998+00:00",
+  "elapsed_seconds": 1.9539999999997235,
+  "error": "Traceback (most recent call last):\n  File \"E:\\minesweeper_cnn\\scl_round2.py\", line 205, in worker\n    writer.add_scalar(\"speed\", (step - episode_step) / (episode_now - episode_time), step)\n                               ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nZeroDivisionError: float division by zero\n",
+  "returncode": 1,
+  "console_log": "E:\\minesweeper_cnn\\output\\scl_round2_smoke_20261022_v3\\smoke\\271828\\10\\console.log"
+}
